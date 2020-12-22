@@ -1,0 +1,8 @@
+.collapse{
+	[type] + label + *{
+	display:none;
+	}
+	[type]:checked + label + * {
+	display:block;
+	}
+}

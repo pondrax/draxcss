@@ -1,0 +1,37 @@
+
+
+.tile{
+display:flex;
+flex-flow:row nowrap;
+flex:1 0 auto;
+margin:1em -$spacing/3 0;
+}
+.tile.compact{
+align-items:center;
+}
+.tile>*:not(img){
+flex-grow:1;
+padding:0 $spacing/2;
+}
+.tile>img{
+white-space:nowrap;
+}
+
+.tile > .fill{
+flex-grow:1;
+}
+.tile>.action,
+.tile>*:first-child{
+flex-grow:0;
+flex-shrink:0;
+padding:0;
+}
+.tile>* h1,
+.tile>* h2,
+.tile>* h3,
+.tile>* h4,
+.tile>* h5,
+.tile>* h6{
+padding-top:0;
+line-height:1;
+}

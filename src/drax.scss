@@ -1,0 +1,40 @@
+@import 'variables';
+
+// Normalize.css (external library)
+@import 'normalize';
+@import 'base';
+
+//Elements
+@import 'typography';
+@import 'labels';
+@import 'buttons';
+@import 'grid';
+@import 'forms';
+@import 'tables';
+@import 'navbar';
+
+
+// Components
+@import 'components/accordion';
+@import 'components/avatar';
+@import 'components/badges';
+@import 'components/breadcrumbs';
+@import 'components/cards';
+@import 'components/carousel';
+@import 'components/collapse';
+@import 'components/dropdowns';
+@import 'components/lightbox';
+@import 'components/modals';
+@import 'components/steps';
+@import 'components/tabs';
+@import 'components/tile';
+@import 'components/toasts';
+@import 'components/tooltips';
+@import 'components/tree';
+
+@import 'utilities';
+@import 'colors';
+
+// Generic styles for things like <body>, <a> and others
+// It also overwrites normalize.css a bit
+//@import './plugins/generic/plugin';

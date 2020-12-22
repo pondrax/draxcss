@@ -1,0 +1,44 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  
+
+  &.striped {
+    tbody {
+      tr:nth-of-type(odd) {
+        background: $silver;
+      }
+    }
+  }
+
+  &:not(.nohover),&.striped{
+    tbody {
+      tr {
+        &:hover,&.active {
+          background: $gray;
+        }
+      }
+    }
+  }
+
+
+  td,
+  th {
+    border-bottom: $border-width solid $gray;
+    padding: $spacing/2 $spacing/3;
+    text-align:left;
+  }
+  th {
+    border-bottom-width: $border-width*2;
+  }
+  &.table-lg td,
+  &.table-lg th{
+    padding: $spacing $spacing*2/3;    
+  }
+  
+  &.table-xl td,
+  &.table-xl th{
+    padding: $spacing*2 $spacing*2/3;    
+  }
+}

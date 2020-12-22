@@ -1,0 +1,212 @@
+$full:100% !default;
+
+$grid-gutter: $spacing !default;
+$grid-gutter-vertical: $grid-gutter !default;
+$grid-gutter-horizontal: $grid-gutter !default;
+
+$grid-count: one two three four five six seven eight nine ten eleven twelve !default;
+$grid-count-sizes: (
+  one   : 1,
+  two   : 2,
+  three : 3,
+  four  : 4,
+  five  : 5,
+  six   : 6,
+  seven : 7,
+  eight : 8,
+  nine  : 9,
+  ten   : 10,
+  eleven: 11,
+  twelve: 12
+);
+$breakpoints: (
+  xs: 0px,
+  sm: 576px,
+  md: 768px,
+  lg: 960px,
+  xl: 1200px
+);
+
+@mixin media-above($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media all and (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+@mixin media-below($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media all and (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+@mixin media-between($lower, $upper) {
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+    @media all and (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  } @else {
+    @if (map-has-key($breakpoints, $lower) == false) {
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+    @if (map-has-key($breakpoints, $upper) == false) {
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+
+.row,.column {
+  display: -ms-flexbox;
+  display: flex;
+  flex-basis: calc(1000% + #{$grid-gutter-horizontal});
+  transition: all .3s ease;
+}
+.row{
+  flex-flow: row wrap;
+}
+.column{
+flex-flow:column nowrap;
+
+}
+.gap>*{
+  padding:0 $grid-gutter-horizontal*2/3;
+}
+.gap{
+  margin-left:-$grid-gutter-horizontal*2/3;
+  margin-right:-$grid-gutter-horizontal*2/3;
+}
+.row > *,.column > * {
+  box-sizing: border-box;
+  flex: 1 1 auto; /* Default for IE10 bug */
+  padding-bottom: $grid-gutter-vertical;
+}
+
+
+.row,.column {
+  &[class*="one"],
+  &[class*="two"],
+  &[class*="three"],
+  &[class*="four"],
+  &[class*="five"],
+  &[class*="six"],
+  &[class*="seven"],
+  &[class*="eight"],
+  &[class*="nine"],
+  &[class*="ten"],
+  &[class*="eleven"],
+  &[class*="twelve"] {
+    > * {
+      flex-grow: 0;
+      word-break: break-word;
+      overflow-wrap: break-word; 
+    }
+  }
+}
+
+.row.grow > * ,
+.column.grow > * {
+  flex-grow: 1;
+}
+
+.row.start,
+.column.start {
+  justify-content: flex-start;
+}
+.row.center,
+.column.center {
+  justify-content: center;
+}
+.row.end ,
+.column.end {
+  justify-content: flex-end;
+}
+.row.justify ,
+.column.justify {
+  justify-content: space-between;
+}
+.row.top ,
+.column.top {
+  align-items:start;
+}
+.row.middle ,
+.column.middle {
+  align-items:center;
+}
+.row.bottom,
+.column.bottom{
+  align-items:baseline;
+}
+.row > .fill,
+.column > .fill{
+flex-grow:1
+}
+
+
+.fill{
+flex-grow:1;
+}
+
+
+@each $point in $breakpoints {
+  $i: index($breakpoints, $point);
+  $keypoint: nth(map-keys($breakpoints), $i);
+  @if $keypoint==xs{
+    @each $name in $grid-count{
+      $column-count:map-get($grid-count-sizes, $name);
+      .#{$name} > * {
+        flex-basis: round($full/$column-count*10000)/10000;
+      }
+      @for $col from 1 through $column-count{            
+        .#{$name} > .xs-#{$col} {
+          flex-basis: round($full*$col/$column-count*1000)/1000;
+        } 
+      }
+    }
+		
+		
+		@for $width from 1 through 10{
+			.w-#{$width*50}{
+				width:percentage($width*.5);
+			}
+			.none{display:none !important}
+		}
+		
+  }
+  @else{
+    @include media-above($keypoint){
+      @each $name in $grid-count{
+        $column-count:map-get($grid-count-sizes, $name);
+        // Reset child to default size at current breakpoint
+        .#{$name}-#{$keypoint} > *,
+        .#{$name}-#{$keypoint} > [class^=xs-] {
+          flex-basis: round($full/$column-count*1000)/1000;
+        }
+        @for $col from $column-count through 1{
+          .#{$name}-#{$keypoint} > .#{$keypoint}-#{$col}{
+            flex-basis: round($full*$col/$column-count*1000)/1000;
+          } 
+        }
+      }
+			
+			
+			.none-#{$keypoint}{display:none !important}
+			
+			.show-#{$keypoint}{display:block !important}
+			
+			@for $width from 1 through 10{
+				.w-#{$keypoint}-#{$width*50}{
+					width:percentage($width*.5);
+				}
+			}
+    }
+  }
+}

@@ -1,0 +1,46 @@
+
+//$select-dropimage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjMiPjxwYXRoIGQ9Im0gMCwxIDEsMiAxLC0yIHoiLz48L3N2Zz4=" !default;
+
+.accordion{
+  position:relative;
+  
+  >*{
+    //float:left;
+    a,label{
+    padding-top: 0.5em;
+    display:block;
+    border-bottom:1px solid $gray;
+    cursor:pointer;
+    }
+    a:hover,label:hover{
+      text-decoration:underline;
+    }
+    a:before,label:before{
+      width:15px;
+      text-align:center;
+      display:inline-block;
+			transform:scale(1.5);
+      content:'\2022';
+      border:0 !important;
+    }
+    
+    >section{
+    height:0;
+    overflow-y:hidden;
+    transition:all .3s;
+    }
+    &.active a, 
+    [type=radio]:checked ~ label{
+    font-weight:bold;
+    }
+    &.active a:before,
+    [type=radio]:checked ~ label:before{
+      content:'\25BE'
+    }    
+    &.active > section,
+    [type=radio]:checked ~ section{
+    //background:$pink;
+      height:auto;
+    }
+  }
+}

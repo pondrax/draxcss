@@ -1,0 +1,100 @@
+//Display and Headings
+.display-1,
+.display-2,
+.display-3,
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+  margin: 0;
+  padding: $spacing/3 0;
+  font-weight:500;
+}
+
+.display-1 { font-size: 3.75em;}
+.display-2 { font-size: 3.375em; }
+.display-3 { font-size: 3em;}
+h1,.h1{font-size:2.5em}
+h2,.h2 { font-size: 2em; }
+h3,.h3 { font-size: 1.75em; }
+h4,.h4 { font-size: 1.5em; }
+h5,.h5 { font-size: 1.25em; }
+h6,.h6 { font-size: 1em; }
+
+
+//Paragraph
+p{
+margin:.5em 0 .2em;  
+line-height:1.5;
+}
+
+.extra-large{font-size: 1.5em}
+.large{font-size: 1.25em}
+.medium{font-size: 1em}
+small,.small{font-size: 80%;}
+
+
+//Lists
+ul,ol{
+  padding-left:$spacing*2;
+}
+li {
+  margin: 0 0 $spacing / 2;
+}
+dt{font-weight:bold;}
+dd{margin-left:$spacing*2}
+//Link
+a {
+  color: $red;
+  opacity:.8;
+  text-decoration: none;
+  box-shadow: none;
+  transition: $transition;
+}
+a:hover{
+  opacity:1;
+    text-shadow: 0 0 1px $silver;
+}
+
+
+// Others
+
+code {
+  padding: $spacing / 2 $spacing;
+  font-size: .8em;
+  background: #f5f5f5;
+}
+
+pre {
+  text-align: left;
+  padding: $spacing / 2 $spacing;
+  background: #f5f5f5;
+  border-radius: $radius;
+
+  code {
+    padding: 0;
+  }
+}
+
+blockquote {
+  min-height:40px;
+  padding: .5em 0 .5em 1em;
+  margin: 0 0 0 .1em;
+  box-shadow: inset 5px 0 rgba($black, .3);
+  position:relative;
+}
+blockquote:after{
+  content:'\201D';
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:-1;
+  line-height:1;
+  color:$silver;
+  font-size:5em;
+}
+blockquote > cite:before{
+  content:'- ';
+}

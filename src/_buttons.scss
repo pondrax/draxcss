@@ -1,0 +1,100 @@
+// %button
+// This class defines a clickable element that looks like a label
+
+
+
+// Variables
+$button-margin: $spacing / 2 0 !default;
+$button-padding: $label-padding !default;
+$button-hover: inset 0 0 0 99em rgba($white, $transparency) !default;
+$button-click: inset 0 0 0 99em rgba($black, $transparency) !default;
+$button-link-hover: inset 0 0 0 99em rgba($black, $transparency / 2) !default;
+$button-transition: $transition !default;
+$button-radius: $label-radius !default;
+
+
+
+// Definition
+%button {
+  @extend %label;
+  text-align:center;
+  margin: $button-margin;
+  cursor: pointer;
+  transition: $button-transition;
+  border-radius: $button-radius;
+  border-width:2px;
+
+  // Avoid the input { height: 2.2 }
+  height: auto;
+  vertical-align: baseline;
+
+  // This avoids a nasty "hover" issue (slightly taller on hover)
+  box-shadow: 0 0 rgba(0, 0, 0, 0) inset;
+
+  // Methods
+  &:hover,
+  &:focus {
+    box-shadow: $button-hover;
+    border-color:rgba(0,0,0, 0.15);
+    }
+
+  &.link:hover,
+  &.link:focus {
+    box-shadow: $button-link-hover;
+    }
+
+  &.active,
+  &:active,
+  &.link:active {
+    box-shadow: $button-click;
+		border-color: rgba(0, 0, 0, 0.15);
+    }
+
+  &[disabled] {
+    cursor: default;
+    box-shadow: none;
+    background: $gray;
+    }
+  }
+
+
+
+// For the toggle buttons
+:checked + .toggle,
+:checked + .toggle:hover {
+  box-shadow: $button-click;
+}
+
+// Hide the checkbox/radiobutton
+// Handle with care
+[type] + .toggle {
+  padding: $button-padding;
+  margin-right: 0;
+
+  &:after,
+  &:before {
+    display: none;
+  }
+}
+
+// Implement the abstract class for real elements
+button,
+.button,
+[type=reset],
+[type=submit] {
+  @extend %button;
+}
+
+
+
+// // Note: If you try to do this there's a selector explossion:
+
+// &%hover {
+//   box-shadow: $button-hover;
+//   }
+
+// &:hover {
+//   @extend %hover;
+//   }
+
+// Like `button.button:hover, .button[type="submit"], ...`

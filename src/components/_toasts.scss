@@ -1,0 +1,13 @@
+
+.toast {
+  @extend %card;
+  background: $black;
+  border: .1em solid rgba(0,0,0,.2);
+  border-radius: $radius;
+  color: $white;
+  display: block;
+  padding: $spacing;
+  width: 100%;
+  margin-bottom:1em;
+}
+

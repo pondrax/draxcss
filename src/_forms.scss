@@ -1,0 +1,224 @@
+
+// Variables
+$input-height: auto !default;
+$input-padding: $spacing *2/3 $spacing !default;
+$input-background: #fff !default;
+
+// Variables
+$select-height: 2.2em !default;
+$select-margin: $spacing / 2 !default;
+$select-padding: $spacing / 2 $spacing * 0.75 !default;
+
+// This comes from arrow.svg. Converted with:
+// http://dopiaza.org/tools/datauri/index.php
+$select-dropimage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjMiPjxwYXRoIGQ9Im0gMCwxIDEsMiAxLC0yIHoiLz48L3N2Zz4=" !default;
+
+// Radio button
+
+// Variables
+$radio-size: 1em !default;
+$radio-border: 1px solid #aaa !default;
+
+$checkbox-character: '\2714' !default;
+$checkbox-radius: $radius !default;
+
+
+%radio {
+  opacity: 0;
+  width: 0;
+  position: absolute;
+  display: inline-block;
+  
+  //+ *:hover:before,
+  //&:focus + .checkable:before {
+    //border: 1px solid $primary;
+    //}
+  
+  + .checkable {
+    position: relative;
+    cursor: pointer;
+    padding-left: $radio-size * 1.5;
+    margin-right: .6em;
+        
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: $radio-size;
+      line-height: $radio-size;
+      color: transparent;
+      font-family: sans;
+      text-align: center;
+      box-sizing: border-box;
+      width: $radio-size;
+      height: $radio-size;
+      border-radius: 50%;
+      transition: $transition;
+      }
+
+    &:before {            
+      border: $radio-border;
+      }
+    }
+
+  &:checked + .checkable:after {
+    background: #555;
+    transform: scale(.5) translateY(-100%);
+    }
+  }
+
+
+
+%checkbox {
+  @extend %radio;
+  
+  + .checkable:before {
+    border-radius: $checkbox-radius;
+    }
+
+  + .checkable:after {
+    content: $checkbox-character;
+    background: none;
+    transform: scale(2) translateY(-25%);
+    visibility: hidden;
+    opacity: 0;
+    }
+
+  &:checked + .checkable:after {
+    color: $black;
+    background: none;
+    transform: translateY(-50%);
+    transition: $transition;
+    visibility: visible;
+    opacity: 1;
+    }
+  }
+// 
+
+
+
+// Top level selector
+%input {
+  line-height: 1.5;
+  margin: 0;
+  height: $input-height;
+  padding: $input-padding;
+  border: $border;
+  background-color: $input-background;
+  border-radius: $radius ;
+  transition: $transition;
+  width: 100%;
+
+  &:focus {
+    border: 1px solid $primary;
+    box-shadow: 0 0 0 0.1rem rgba(0,0,0,.2);
+    outline: 0;
+  }
+}
+
+// Code
+%select {
+  // Compatible with old androids
+  background: #fff url(#{$select-dropimage}) no-repeat scroll 95% center / 10px 10px;
+
+  // Compatible with modern browsers
+  background-position: calc(100% - 15px) center;
+
+  border: $border;
+  border-radius: $radius;
+  cursor: pointer;
+  width: 100%;
+  height: $select-height;
+  box-sizing: border-box;
+  padding: $select-padding;
+  transition: all 0.3s;
+
+  // Hide dropdown arrow
+
+  // vendor prefixes required, see:
+  // https://github.com/postcss/autoprefixer#why-doesnt-autoprefixer-support-appearance
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  // Hide the arrow for IE (apparently IE10+)
+  // http://stackoverflow.com/a/21417591 method
+  // http://stackoverflow.com/a/15933790 version
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:focus,
+  &:active {
+    border: 1px solid $primary;
+    transition: outline 0s;
+  }
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $black;
+  }
+
+  option {
+    font-size: inherit;
+    padding: $spacing * 0.75;
+  }
+
+  &[multiple] {
+    height: auto;
+    background: none;
+    padding: 0;
+    overflow:auto;
+  }
+}
+
+
+
+label{
+padding-top:.5em;
+display:inline-block;
+}
+input,
+.input,
+textarea,
+.select select {
+  @extend %input;
+}
+.input{
+padding:.2em .6em;
+height:auto;
+}
+
+textarea {
+  height: auto;
+}
+
+select {
+  @extend %select;
+  }
+
+[type=file],
+[type=color] {
+  cursor: pointer;
+}
+[type=range]:focus{
+  border-color:transparent;
+  box-shadow:none;
+}
+[type=file] {
+  height: auto;
+  padding:0;
+}
+
+[type=radio] {
+  @extend %radio;
+  }
+
+[type=checkbox] {
+  @extend %radio;
+  @extend %checkbox;
+  }

@@ -1,0 +1,50 @@
+.lightbox {
+	height:0;
+	&.active,
+	[type=checkbox]:checked ~ .overlay{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background:rgba(0,0,0,.8);
+	z-index:1000;
+	}
+	&.active{
+	height:auto;
+	}
+	> article{
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:1000;
+	opacity:0;
+	height:80%;
+	overflow:auto;
+	pointer-events:none;
+	transform: translateX(-50%) translateY(-50%);
+	transition:all .3s;
+		*{
+		height:99%;
+		width:auto;
+		}
+	}
+	
+	&.active > article,
+	> [type=checkbox]:checked ~ article{
+	opacity:1;
+	pointer-events:auto;
+	}
+}
+
+.lightbox-indicator{
+	>*{
+	max-height:10em;
+	cursor:pointer;
+	}
+}
+
+[data-lightbox]{
+	max-height:10em;
+	cursor:pointer;
+}

@@ -1,0 +1,72 @@
+// Label of text
+$label-padding: $spacing / 2 $spacing * 1.5 !default;
+$label-radius: $radius !default;
+
+// Styles
+%label {
+  display: inline-flex;
+  text-align: left;
+  letter-spacing: inherit;
+  padding: $label-padding;
+  vertical-align: text-bottom;
+  background: $primary;
+  color: $white;
+  border-radius: $label-radius;
+  width: auto;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline:0;
+  border: 1px solid transparent;
+  opacity:1;
+  // Colors from color classes
+  
+  &.link {
+    background-color: transparent;
+    color: inherit;
+  }
+  &.disabled{
+    background-color:$gray;
+    pointer-events:none;
+  }
+}
+
+.label {
+  @extend %label;
+  font-size: .7em;
+  padding: .4em .6em;
+  // margin-left: .4em;
+  line-height: 1;
+  cursor:auto;
+  
+  
+&  img {    
+  min-width: 25px;
+  width: 25px;
+  min-height: 25px;
+  height: 25px;
+  margin: -8px 7px -8px -14px;
+  border-radius: 50%;
+  background: $primary;
+}
+& .close {
+  font-weight: bold;
+  margin-left: 7px;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+}
+& .close:hover {
+color:$black;
+background:$white;
+text-shadow:0 0 2px $black;
+}
+
+}

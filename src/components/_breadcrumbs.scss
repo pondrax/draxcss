@@ -1,0 +1,29 @@
+// Breadcrumbs
+.breadcrumb {
+  list-style: none;
+  margin: $spacing/2 0;
+  padding: $spacing/2 0;
+
+  >li{
+    color: rgba(100,100,100,1);
+    display: inline-block;
+    margin: 0;
+    padding: $spacing/2 0;
+
+    &:not(:last-child) {
+      margin-right: $spacing/2;
+
+      a {
+        color: rgba(100,100,100,1);
+      }
+    }
+
+    &:not(:first-child) {
+      &::before {
+        color: rgba(100,100,100,1);
+        content: "/";
+        padding-right: $spacing/3;
+      }
+    }
+  }
+}

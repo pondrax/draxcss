@@ -1,0 +1,148 @@
+$tooltip-background: $black !default;
+$tooltip-size: .8em !default;
+
+
+// Only display the tooltip for elements with <element data-tooltip="blabla">
+[data-tooltip] {
+  position: relative;
+
+  &:after,
+  &:before {
+    // Position
+    position: absolute;
+    z-index: 10;
+    color:$white;
+    // Hide it by default
+    opacity: 0;
+    border-width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+
+    // Transition
+    transition: opacity .6s ease, height 0s ease .6s;
+
+    // Top one (default)
+    bottom: calc(100% - 6px);
+    left: 0;
+    margin-bottom: 12px;
+    }
+
+  // This is the acutal label-like element
+  &:after {
+
+    // Style
+    //@extend .label;
+    margin-left: 0;
+    font-size: $tooltip-size;
+    background: $tooltip-background;
+
+    // Content
+    content: attr(data-tooltip);
+
+    // Behaviour
+    white-space: nowrap;
+    }
+
+  // This is the small arrow
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 0;
+    border-style: solid;
+
+    // Bottom one (default)
+    border-color:$tooltip-background transparent transparent ;
+    margin-bottom: 0;
+    left: 10px;
+    }
+
+  &:hover:after,
+  &:focus:after,
+  &:hover:before,
+  &:focus:before {
+    opacity: 1;
+    border-width: 6px;
+    height: auto;
+    }
+
+  &:hover:after,
+  &:focus:after {
+    padding: $spacing * .75 $spacing * 1.5;
+    }
+  }
+
+
+
+// Top
+//.tooltip-top {
+  //&:after,
+  //&:before {
+    //top: auto;
+    //bottom: calc(100% - 6px);
+    //left: 0;
+    //margin-bottom: 12px;
+    //}
+
+  //&:before {
+    //border-color: $tooltip-background transparent transparent;
+    //margin-bottom: 0;
+    //left: 10px;
+    //}
+  //}
+
+
+// Top
+.tooltip-bottom {
+  &:after,
+  &:before {
+    bottom: auto;
+    top: calc(100% - 6px);
+    left: 0;
+    margin-top: 12px;
+    }
+
+  &:before {
+    border-color: transparent transparent $tooltip-background;
+    margin-top: 0;
+    left: 10px;
+    }
+  }
+
+// Right
+.tooltip-right {
+  &:after,
+  &:before {
+    left: 100%;
+    margin-left: 6px;
+    margin-bottom: 0;
+    bottom: 0;
+    }
+
+  &:before {
+    border-color: transparent $tooltip-background transparent transparent;
+    margin-left: -6px;
+    left: 100%;
+    bottom: 7px;
+    }
+  }
+
+// Left
+.tooltip-left {
+  &:after,
+  &:before {
+    right: 100%;
+    margin-right: 6px;
+    left: auto;
+    margin-bottom: 0;
+    bottom: 0;
+    }
+
+  &:before {
+    border-color: transparent transparent transparent $tooltip-background;
+    margin-right: -6px;
+    right: 100%;
+    bottom: 7px;
+    }
+  }

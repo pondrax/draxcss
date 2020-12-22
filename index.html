@@ -1,0 +1,3268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DRAX CSS Documentations</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="css, library, drax, draxcss, light">
+<meta name="description" content="A lightweight CSS library">
+<link rel="stylesheet" href="/src/drax.scss">
+<style>
+
+.demo {
+padding: 0 0 0 1em;
+margin: 0 0 0 .1em;
+box-shadow: inset 5px 0 #85144B;
+position:relative;
+}
+.box{
+background:rgba(255,0,0,.3);
+padding:.2em;
+text-align:center;
+border:1px solid rgba(255,0,0,.5);
+}
+</style>
+<link rel="stylesheet" href="/src/plugins/microlight.css">
+<script src="/src/plugins/microlight.js"></script>
+</head>
+<body class="">
+  <main class="row one three-sm four-md six-xl">
+    <aside class="shadow p-0">
+      <section class="sticky top-left p-5 column twelve overflow-y" style="height:100vh">
+        <h3 class="">Drax<span class="text-secondary">CSS</span></h3>
+        <nav class="fill row two one-sm">
+          <ul>
+            <li><b>Layout</b></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#responsive">Responsive</a></li>
+            <li><a href="#hero">Hero</a></li>
+            <li><a href="#navbar">Navbar</a></li>
+          </ul>
+          <ul>
+            <li><b>Elements</b></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#label">Labels</a></li>
+            <li><a href="#button">Buttons</a></li>
+            <li><a href="#table">Tables</a></li>
+            <li><a href="#form">Forms</a></li>
+            <li><a href="#icon">Icons</a></li>
+          </ul>
+          <ul>
+            <li><b>Components</b></li>
+            <li><a href="#accordion">Accordion</a></li>
+            <li><a href="#avatar">Avatars</a></li>
+            <li><a href="#badge">Badges</a></li>
+            <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+            <li><a href="#card">Cards</a></li>
+            <li><a href="#carousel">Carousel</a></li>
+            <li><a href="#collapse">Collapse</a></li>
+            <li><a href="#dropdown">Dropdowns</a></li>
+            <li><a href="#lightbox">Lighbox</a></li>
+            <li><a href="#modal">Modals</a></li>
+            <li><a href="#step">Steps</a></li>
+            <li><a href="#tab">Tabs</a></li>
+            <li><a href="#tile">Tiles</a></li>
+            <li><a href="#timeline">Timelines</a></li>
+            <li><a href="#toast">Toasts</a></li>
+            <li><a href="#tooltip">Tooltips</a></li>
+            <li><a href="#tree">Trees</a></li>
+          </ul>
+          <ul>
+            <li><b>Utilities</b></li>
+            <li><a href="#color">Colors</a></li>
+            <li><a href="#display">Display</a></li>
+            <li><a href="#position">Position</a></li>
+            <li><a href="#margin-padding">Margin Padding</a></li>
+          </ul>
+        </nav>
+      </section>
+    </aside>
+    <section class="fill p-5">
+      <section id="intro">
+        <h1 class="display-1">Drax CSS Documentations</h1>
+        <p>These docs contains all of the components available with pure css without using any javascript. Go and see how the contents look on any of your devices.</p>
+      </section>
+      <br>
+      
+      <section id="grid" class="">
+        <h2 class="text-secondary"># Grid</h2>
+        <p>
+          The main approach is mobile-first layout, using flexbox as main display. There are two kind of grid system by flexbox, it is <span class="label maroon">row</span> and <span class="label maroon">column</span>. Row is the parent of horizontaly child elements and Column is the vertically children elements.
+        </p>
+        <h3>Row Grid System</h3>
+        <p>
+          Grid system can be divided into 12 sets of columns, use it horizontally with parent class <span class="label maroon">.row</span> with any tags element for child. By default row class will be set as unlimited child equaly size each row, as long as the size is sufficient otherwise the rest child will be wrapped.
+        </p>
+        <span class="label maroon">.row</span>
+        <div class="box row">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+          <div class="box">8</div>
+          <div class="box">9</div>
+          <div class="box">10</div>
+          <div class="box">11</div>
+          <div class="box">12</div>
+          <div class="box">13</div>
+          <div class="box">14</div>
+          <div class="box">15</div>
+        </div>
+        <span class="label maroon">.row.twelve</span>
+        <div class="box row twelve">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+          <div class="box">8</div>
+          <div class="box">9</div>
+          <div class="box">10</div>
+          <div class="box">11</div>
+          <div class="box">12</div>
+        </div>
+        <span class="label maroon">.row.eleven</span>
+        <div class="box row eleven">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+          <div class="box">8</div>
+          <div class="box">9</div>
+          <div class="box">10</div>
+          <div class="box">11</div>
+        </div>
+        <span class="label maroon">.row.ten</span>
+        <div class="box row ten">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+          <div class="box">8</div>
+          <div class="box">9</div>
+          <div class="box">10</div>
+        </div>
+        <span class="label maroon">.row.nine</span>
+        <div class="box row nine">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+          <div class="box">8</div>
+          <div class="box">9</div>
+        </div>
+        <span class="label maroon">.row.eight</span>
+        <div class="box row eight">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+          <div class="box">8</div>
+        </div>
+        <span class="label maroon">.row.seven</span>
+        <div class="box row seven">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+        </div>
+        <span class="label maroon">.row.six</span>
+        <div class="box row six">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+        </div>
+        <span class="label maroon">.row.five</span>
+        <div class="box row five">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+        </div>
+        <span class="label maroon">.row.four</span>
+        <div class="box row four">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+        </div>
+        <span class="label maroon">.row.three</span>
+        <div class="box row three">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+        <span class="label maroon">.row.two</span>
+        <div class="box row two">
+          <div class="box">1</div>
+          <div class="box">2</div>
+        </div>
+        <span class="label maroon">.row.one</span>
+        <div class="box row one">
+          <div class="box">1</div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-grid" checked>
+          <label for="script-grid" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;div class="row"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+  &lt;div&gt;8&lt;/div&gt;
+  &lt;div&gt;9&lt;/div&gt;
+  &lt;div&gt;10&lt;/div&gt;
+  &lt;div&gt;11&lt;/div&gt;
+  &lt;div&gt;12&lt;/div&gt;
+  &lt;div&gt;13&lt;/div&gt;
+  &lt;div&gt;14&lt;/div&gt;
+  &lt;div&gt;15&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row twelve"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+  &lt;div&gt;8&lt;/div&gt;
+  &lt;div&gt;9&lt;/div&gt;
+  &lt;div&gt;10&lt;/div&gt;
+  &lt;div&gt;11&lt;/div&gt;
+  &lt;div&gt;12&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row eleven"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+  &lt;div&gt;8&lt;/div&gt;
+  &lt;div&gt;9&lt;/div&gt;
+  &lt;div&gt;10&lt;/div&gt;
+  &lt;div&gt;11&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row ten"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+  &lt;div&gt;8&lt;/div&gt;
+  &lt;div&gt;9&lt;/div&gt;
+  &lt;div&gt;10&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row nine"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+  &lt;div&gt;8&lt;/div&gt;
+  &lt;div&gt;9&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row eight"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+  &lt;div&gt;8&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row seven"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row six"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row five"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row four"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row three"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row two"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row one"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+&lt;/div&gt;</pre>
+          
+        </div>
+        <br>
+        <h3>Column Grid System</h3>
+        <p>
+          Different with row, column make it possible to vertically child elements with parent class <span class="label maroon">.column</span>. Same with row, without classes the element will grow and shrink to fit the entire container.
+        </p>
+        <div class="row four">
+          <div><span class="label maroon">.column</span></div>
+          <div><span class="label maroon">.column.twelve</span></div>
+          <div><span class="label maroon">.column.six</span></div>
+          <div><span class="label maroon">.column.twelve</span></div>
+        </div>
+        <div class="row four">
+          <div class="box column">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+            <div class="box">7</div>
+            <div class="box">8</div>
+            <div class="box">9</div>
+            <div class="box">10</div>
+            <div class="box">11</div>
+            <div class="box">12</div>
+            <div class="box">13</div>
+            <div class="box">14</div>
+            <div class="box">15</div>
+          </div>
+          <div class="box column twelve">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+            <div class="box">7</div>
+            <div class="box">8</div>
+            <div class="box">9</div>
+            <div class="box">10</div>
+            <div class="box">11</div>
+            <div class="box">12</div>
+          </div>
+          <div class="box column six">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+            <div class="box">7</div>
+            <div class="box">8</div>
+            <div class="box">9</div>
+            <div class="box">10</div>
+          </div>
+          <div class="box column twelve">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-grid-1" checked>
+          <label for="script-grid-1" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;div class="column"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+  &lt;div&gt;8&lt;/div&gt;
+  &lt;div&gt;9&lt;/div&gt;
+  &lt;div&gt;10&lt;/div&gt;
+  &lt;div&gt;11&lt;/div&gt;
+  &lt;div&gt;12&lt;/div&gt;
+  &lt;div&gt;13&lt;/div&gt;
+  &lt;div&gt;14&lt;/div&gt;
+  &lt;div&gt;15&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="column twelve"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+  &lt;div&gt;8&lt;/div&gt;
+  &lt;div&gt;9&lt;/div&gt;
+  &lt;div&gt;10&lt;/div&gt;
+  &lt;div&gt;11&lt;/div&gt;
+  &lt;div&gt;12&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="column six"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+  &lt;div&gt;8&lt;/div&gt;
+  &lt;div&gt;9&lt;/div&gt;
+  &lt;div&gt;10&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="column twelve"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        <br>
+        <h3>Expand child</h3>
+        <p>
+          To expand remainder child content can be done with <span class="label maroon">.grow</span> on row or column container. For columns, expanding children only works if you set the element height.
+        </p>
+        <div class="box row three grow">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+        </div>
+        <p>
+          Expand specific child only use parent class name like <span class="label maroon">.three</span> following column span number.
+        </p>
+        <div class="box row three center">
+          <div class="box">1</div>
+          <div class="box xs-2">.xs-2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+        </div>
+        <p>
+          Lazy expand with <span class="label maroon">.fill</span> to fit single row. 
+        </p>
+        <div class="box row three center">
+          <div class="box">1</div>
+          <div class="box fill">.fill</div>
+        </div>
+        <div class="box row three center">
+          <div class="box fill">.fill</div>
+          <div class="box">1</div>
+        </div>
+        <p>
+          Expanding <span class="label maroon">column</span>
+        </p>
+        <div class="box column four" style="height:100px">
+          <div class="box fill">.fill</div>
+          <div class="box">1</div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-grid-2" checked>
+          <label for="script-grid-2" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;div class="row three grow"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row three center"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div class="xs-2"&gt;.xs-2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row three center"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div class="fill"&gt;.fill&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row three center"&gt;
+  &lt;div class="fill"&gt;.fill&lt;/div&gt;
+  &lt;div&gt;1&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="column four" style="height:100px"&gt;
+  &lt;div class="fill"&gt;.fill&lt;/div&gt;
+  &lt;div&gt;1&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        <br>
+        <h3>Align child items</h3>
+        <p>
+          You can align child content left, center, right and justify. Put these classes on parent container.
+        </p>
+        <span class="label maroon">.start</span>
+        <div class="box row five start">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+        <span class="label maroon">.center</span>
+        <div class="box row five center">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+        <span class="label maroon">.end</span>
+        <div class="box row five end">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+        <span class="label maroon">.justify</span>
+        <div class="box row five justify">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-grid-2" checked>
+          <label for="script-grid-2" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;div class="row five start"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row five center"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row five end"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row five justify"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+      
+      </section>
+      <hr>
+      <section id="responsive" class="">
+        <h2 class="text-secondary"># Responsive</h2>
+        <p>
+          The main approach is mobile-first layout, using flexbox as main display. There are two kind of grid system by flexbox, it is <span class="label maroon">row</span> and <span class="label maroon">column</span>. Row is the parent of horizontaly child elements and Column is the vertically parent of children elements.
+        </p>
+        <h3>Container</h3>
+        <p>
+          Main grid container contains about 5 sizes <span class="label maroon">grid-sm</span>, <span class="label maroon">grid-md</span>, <span class="label maroon">grid-lg</span>, <span class="label maroon">grid-xl</span> and <span class="label maroon">grid</span> for fluid width.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th class="text-left">Grid Classname</th>
+              <th>&lt;576px</th>
+              <th>&ge;576px</th>
+              <th>&ge;768px</th>
+              <th>&ge;960px</th>
+              <th>&ge;1200px</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr>
+              <td class="text-left">grid-sm</td>
+              <td>100%</td>
+              <td>576px</td>
+              <td>576px</td>
+              <td>576px</td>
+              <td>576px</td>
+            </tr>
+            <tr>
+              <td class="text-left">grid-md</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>768px</td>
+              <td>768px</td>
+              <td>768px</td>
+            </tr>
+            <tr>
+              <td class="text-left">grid-lg</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>960px</td>
+              <td>960px</td>
+            </tr>
+            <tr>
+              <td class="text-left">grid-xl</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>1200px</td>
+            </tr>
+            <tr>
+              <td class="text-left">grid</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+              <td>100%</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <h3>Responsive Row</h3>
+        <p>
+          We follow a mobile-first design. Put the number of columns for mobile as explained in the previous point. Then, when things get too stretched, add a column counter with screen classes <span class="label maroon">sm</span>, <span class="label maroon">md</span>, <span class="label maroon">lg</span> and <span class="label maroon">xl</span>. By default counter name is marked as <span class="label maroon">xs</span>.
+        </p>
+        <span class="label maroon">.one .two-sm .three-md .four-lg .five-xl</span>
+        <div class="box row one two-sm three-md four-lg five-xl">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+          <div class="box">8</div>
+          <div class="box">9</div>
+          <div class="box">10</div>
+        </div>
+        <p>
+          Column number from previous section can be used to follow their parent in responsive design.
+        </p>
+        <span class="label maroon">.one .two-sm .three-md .four-lg .five-xl</span>
+        <div class="box row one two-sm three-md four-lg five-xl">
+          <div class="box sm-1">.sm-1</div>
+          <div class="box sm-2">.sm-2</div>
+          <div class="box lg-2 md-3">.lg-2 .md-3</div>
+          <div class="box xl-3">.xl-3</div>
+          <div class="box xs-3 fill">.xs-3 .fill</div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-responsive" checked>
+          <label for="script-responsive" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;div class="row one two-sm three-md four-lg five-xl"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt;
+  &lt;div&gt;5&lt;/div&gt;
+  &lt;div&gt;6&lt;/div&gt;
+  &lt;div&gt;7&lt;/div&gt;
+  &lt;div&gt;8&lt;/div&gt;
+  &lt;div&gt;9&lt;/div&gt;
+  &lt;div&gt;10&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row one two-sm three-md four-lg five-xl"&gt;
+  &lt;div class="sm-1"&gt;.sm-1&lt;/div&gt;
+  &lt;div class="sm-2"&gt;.sm-2&lt;/div&gt;
+  &lt;div class="lg-2 md-3"&gt;.lg-2 .md-3&lt;/div&gt;
+  &lt;div class="xl-3"&gt;.xl-3&lt;/div&gt;
+  &lt;div class="xs-3 fill"&gt;.xs-3 .fill&lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+      </section>
+      <hr>
+      <section id="navbar">
+        <h2 class="text-secondary"># Navbar</h2>
+        <p>
+					Horizontal navbar
+        </p>
+        <br>
+        <h3>Navbar</h3>
+				<header class="navbar">
+					<section>
+						<a href="#navbar" class="navbar-brand mr-2">DraxCSS</a>
+						<a href="#navbar">Docs</a>
+						<a href="#navbar">Github</a>
+					</section>
+					<section>
+					<div class="group">
+						<input type="text" class="small" placeholder="search">
+						<button class="small" >Menu</button>
+						</div>
+					</section>
+				</header>
+				<br>
+				
+				<header class="navbar">
+					<section>
+						<a href="#navbar" class="navbar-brand mr-2">DraxCSS</a>
+						<a href="#navbar">Docs</a>
+						<a href="#navbar">Github</a>
+					</section>
+					<section>
+						<img src="/src/img/avatar.png" class="avatar small">
+					</section>
+					<section>
+						<a href="#navbar" class="navbar-brand mr-2">DraxCSS</a>
+						<a href="#navbar">Docs</a>
+						<a href="#navbar">Github</a>
+					</section>
+				</header>
+        <div class="collapse">
+          <input type="checkbox" id="script-navbar" checked>
+          <label for="script-navbar" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight"></pre>
+				</div>
+			</section>
+			<hr>
+      <section id="typography" class="">
+        <h2 class="text-secondary"># Typography</h2>
+        <p>
+          Hey font, you're so unique. why keeping we you restricted, feel free to explore or add external font. just put your font class on the <span class="label maroon">body</span> tag then you're done
+        </p>
+        <br>
+        <h3>Displays</h3>
+        <p>
+          Captivate your user with huge fonts
+        </p>
+        <div class="demo">
+          <p class="display-1">Display 1 <span class="text-info">.display-1</span> <small class="silver">60px</small></p>
+          <p class="display-2">Display 2 <span class="text-info">.display-2</span> <small class="silver">54px</small></p>
+          <p class="display-3">Display 3 <span class="text-info">.display-3</span> <small class="silver">48px</small></p>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-typography" checked>
+          <label for="script-typography" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;p class="display-1"&gt;Display 1&lt;/p&gt;
+&lt;p class="display-2"&gt;Display 2&lt;/p&gt;
+&lt;p class="display-3"&gt;Display 3&lt;/p&gt;</pre>
+        </div>
+        <br>
+        <h3>Headings</h3>
+        <p>
+          Daily h1 to H6 style
+        </p>
+        <div class="demo">
+          <h1>Heading 1 <span class="text-info">H1 .h1</span>  <small class="silver">40px</small></h1>
+          <h2>Heading 2 <span class="text-info">H2 .h2</span> <small class="silver">32px</small></h2>
+          <h3>Heading 3 <span class="text-info">H3 .h3</span> <small class="silver">28px</small></h3>
+          <h4>Heading 4 <span class="text-info">H4 .h4</span> <small class="silver">24px</small></h4>
+          <h5>Heading 5 <span class="text-info">H5 .h5</span> <small class="silver">20px</small></h5>
+          <h6>Heading 6 <span class="text-info">H6 .h6</span> <small class="silver">16px</small></h6>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-typography-1" checked>
+          <label for="script-typography-1" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;h1&gt;Heading 1&lt;/h1&gt; or &lt;p class="h1"&gt;Heading 1&lt;/p&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt; or &lt;p class="h2"&gt;Heading 2&lt;/p&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt; or &lt;p class="h3"&gt;Heading 3&lt;/p&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt; or &lt;p class="h4"&gt;Heading 4&lt;/p&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt; or &lt;p class="h5"&gt;Heading 5&lt;/p&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt; or &lt;p class="h6"&gt;Heading 6&lt;/p&gt;</pre>
+        </div>
+        <br>
+        <h3>Paragraph</h3>
+        <p>
+          Enough with heading, lets try paragraph
+        </p>
+        <div class="demo">
+          <p class="extra-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.  <span class="text-info">p .extra-large</span> <small class="muted">16px</small></p>
+          <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.  <span class="text-info">p .large</span> <small class="muted">16px</small></p>
+          <p class="medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.  <span class="text-info">p .medium</span> <small class="muted">16px</small></p>
+          <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.  <span class="text-info">small .small</span> <small class="muted">80%</small></p>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-typography-2" checked>
+          <label for="script-typography-2" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;p class="extra-large"&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+&lt;/p&gt;
+&lt;p class="large"&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+&lt;/p&gt;
+&lt;p class="medium"&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+&lt;/p&gt;
+&lt;p class="small"&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+&lt;/p&gt;</pre>
+        </div>
+        <br>
+        <h3>Semantic Text </h3>
+        <p>Another bunch of quote code</p>
+        <div class="demo row two-md">
+          <div><abbr title="Internationalization">I18N</abbr> <span class="text-info">abbr</span></div>
+          <div><b>Bold</b>  <span class="text-info">b</span></div>
+          <div><cite>Citation</cite>  <span class="text-info">cite</span></div>
+          <div><code>Hello world!</code>  <span class="text-info">code</span></div>
+          <div><pre class="inline">Another hello!</pre>  <span class="text-info">pre</span></div>
+          <div><del>Delete</del>  <span class="text-info">del</span></div>
+          <div><em>Emphasis</em>  <span class="text-info">em</span></div>
+          <div><i>Italic</i>  <span class="text-info">i</span></div>
+          <div><ins>Inserted</ins>  <span class="text-info">ins</span></div>
+          <div><kbd>Ctrl + S</kbd>  <span class="text-info">kbd</span></div>
+          <div><mark>Highlighted</mark>  <span class="text-info">mark</span></div>
+          <div><s>Strikethrough</s>  <span class="text-info">s</span></div>
+          <div><samp>Sample</samp>  <span class="text-info">samp</span></div>
+          <div>Text <sub>Subscripted</sub>  <span class="text-info">sub</span></div>
+          <div>Text <sup>Supscripted</sup>  <span class="text-info">sup</span></div>
+          <div><time>20:00</time>  <span class="text-info">time</span></div>
+          <div><u>Underline</u>  <span class="text-info">u</span></div>
+          <div><var>x = y + 2 </var>  <span class="text-info">var</span></div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-typography-3" checked>
+          <label for="script-typography-3" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;abbr title="Internationalization"&gt;I18N&lt;/abbr&gt;
+&lt;b&gt;Bold&lt;/b&gt;
+&lt;cite&gt;Citation&lt;/cite&gt;
+&lt;code&gt;Hello world!&lt;/code&gt;
+&lt;pre class="inline"&gt;Another hello!&lt;/pre&gt;
+&lt;del&gt;Delete&lt;/del&gt;
+&lt;em&gt;Emphasis&lt;/em&gt;
+&lt;i&gt;Italic&lt;/i&gt;
+&lt;ins&gt;Inserted&lt;/ins&gt;
+&lt;kbd&gt;Ctrl + S&lt;/kbd&gt;
+&lt;mark&gt;Highlighted&lt;/mark&gt;
+&lt;s&gt;Strikethrough&lt;/s&gt;
+&lt;samp&gt;Sample&lt;/samp&gt;
+Text &lt;sub&gt;Subscripted&lt;/sub&gt;
+Text &lt;sup&gt;Supscripted&lt;/sup&gt;
+&lt;time&gt;20:00&lt;/time&gt;
+&lt;u&gt;Underline&lt;/u&gt;
+&lt;var&gt;x = y + 2 &lt;/var&gt;</pre>
+        </div>
+        <br>
+        <h3>Blockquote</h3>
+        <div class="">
+          <blockquote>
+            <p>This is quote <span class="text-info">blockquote</span></p>
+            <cite>from bla</cite>
+          </blockquote>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-typography-4" checked>
+          <label for="script-typography-4" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;blockquote&gt;
+  &lt;p&gt;This is quote &lt;span class="text-info"&gt;blockquote&lt;/span&gt;&lt;/p&gt;
+  &lt;cite&gt;from bla&lt;/cite&gt;
+&lt;/blockquote&gt;</pre>
+        </div>
+        <br>
+        <h3>Lists</h3>
+        <p>All list available</p>
+        <div class="demo row three-md">
+          <ul>
+            <li>list item 1</li>
+            <li>list item 2
+              <ul>
+                <li>list item 2.1</li>
+                <li>list item 2.2</li>
+                <li>list item 2.3</li>
+              </ul>
+            </li>
+            <li>list item 3</li>
+          </ul>
+          <ol>
+            <li>list item 1</li>
+            <li>list item 2
+              <ol>
+                <li>list item 2.1</li>
+                <li>list item 2.2</li>
+                <li>list item 2.3</li>
+              </ol>
+            </li>
+            <li>list item 3</li>
+          </ol>
+          <dl>
+            <dt>description list term 1</dt>
+            <dd>description list description 1</dd>
+            <dt>description list term 2</dt>
+            <dd>description list description 2</dd>
+            <dt>description list term 3</dt>
+            <dd>description list description 3</dd>
+          </dl>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-typography-5" checked>
+          <label for="script-typography-5" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;ul&gt;
+  &lt;li&gt;list item 1&lt;/li&gt;
+  &lt;li&gt;list item 2
+    &lt;ul&gt;
+      &lt;li&gt;list item 2.1&lt;/li&gt;
+      &lt;li&gt;list item 2.2&lt;/li&gt;
+      &lt;li&gt;list item 2.3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;list item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;list item 1&lt;/li&gt;
+  &lt;li&gt;list item 2
+    &lt;ol&gt;
+      &lt;li&gt;list item 2.1&lt;/li&gt;
+      &lt;li&gt;list item 2.2&lt;/li&gt;
+      &lt;li&gt;list item 2.3&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;list item 3&lt;/li&gt;
+&lt;/ol&gt;
+&lt;dl&gt;
+  &lt;dt&gt;description list term 1&lt;/dt&gt;
+  &lt;dd&gt;description list description 1&lt;/dd&gt;
+  &lt;dt&gt;description list term 2&lt;/dt&gt;
+  &lt;dd&gt;description list description 2&lt;/dd&gt;
+  &lt;dt&gt;description list term 3&lt;/dt&gt;
+  &lt;dd&gt;description list description 3&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+        </div>
+      </section>
+      <hr>
+      
+      <section id="color" class="">
+        <h2 class="text-secondary"># Colors</h2>
+        <p>
+          Looking for <span class="label maroon">background colors</span>, lets try it.
+        </p>
+        <h3>Components Colors</h3>
+        <div class="demo">
+          <span class="label primary">.primary</span>
+          <span class="label secondary">.secondary</span>
+          <span class="label info">.info</span>
+          <span class="label success">.success</span>
+          <span class="label warning">.warning</span>
+          <span class="label error">.error</span>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-color" checked>
+          <label for="script-color" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;span class="primary"&gt;.primary&lt;/span&gt;
+&lt;span class="secondary"&gt;.secondary&lt;/span&gt;
+&lt;span class="info"&gt;.info&lt;/span&gt;
+&lt;span class="success"&gt;.success&lt;/span&gt;
+&lt;span class="warning"&gt;.warning&lt;/span&gt;
+&lt;span class="error"&gt;.error&lt;/span&gt;</pre>
+        </div>
+        <br>
+        <h3>All Background Colors</h3>
+        <p>
+          Not enough? Here the complete set of <span class="label maroon">background colors</span>
+        </p>
+        <div class="demo">
+          <span class="label primary">.primary</span> or <span class="label blue">.blue</span><br>
+          <span class="label secondary">.secondary</span> or <span class="label purple">.purple</span><br>
+          <span class="label info">.info</span> or <span class="label teal">.teal</span><br>
+          <span class="label success">.success</span> or <span class="label green">.green</span><br>
+          <span class="label warning">.warning</span> or <span class="label yellow">.yellow</span><br>
+          <span class="label error">.error</span> or <span class="label red">.red</span><br>
+          <span class="label muted">.muted</span> or <span class="label gray">.gray</span><br>
+          <span class="label navy">.navy</span><br>
+          <span class="label aqua">.aqua</span><br>
+          <span class="label olive">.olive</span><br>
+          <span class="label orange">.orange</span><br>
+          <span class="label pink">.pink</span><br>
+          <span class="label maroon">.maroon</span><br>
+          <span class="label white text-black">.white</span><br>
+          <span class="label silver text-black">.silver</span><br>
+          <span class="label black">.black</span><br>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-color-1" checked>
+          <label for="script-color-1" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;span class="primary"&gt;.primary&lt;/span&gt; or &lt;span class="blue"&gt;.blue&lt;/span&gt;
+&lt;span class="secondary"&gt;.secondary&lt;/span&gt; or &lt;span class="purple"&gt;.purple&lt;/span&gt;
+&lt;span class="info"&gt;.info&lt;/span&gt; or &lt;span class="teal"&gt;.teal&lt;/span&gt;
+&lt;span class="success"&gt;.success&lt;/span&gt; or &lt;span class="green"&gt;.green&lt;/span&gt;
+&lt;span class="warning"&gt;.warning&lt;/span&gt; or &lt;span class="yellow"&gt;.yellow&lt;/span&gt;
+&lt;span class="error"&gt;.error&lt;/span&gt; or &lt;span class="red"&gt;.red&lt;/span&gt;
+&lt;span class="muted"&gt;.muted&lt;/span&gt; or &lt;span class="gray"&gt;.gray&lt;/span&gt;
+&lt;span class="navy"&gt;.navy&lt;/span&gt;
+&lt;span class="aqua"&gt;.aqua&lt;/span&gt;
+&lt;span class="olive"&gt;.olive&lt;/span&gt;
+&lt;span class="orange"&gt;.orange&lt;/span&gt;
+&lt;span class="pink"&gt;.pink&lt;/span&gt;
+&lt;span class="maroon"&gt;.maroon&lt;/span&gt;
+&lt;span class="white text-black"&gt;.white&lt;/span&gt;
+&lt;span class="silver text-black"&gt;.silver&lt;/span&gt;
+&lt;span class="black"&gt;.black&lt;/span&gt;</pre>
+        </div>
+        <br>
+        <h3>All Text Color Classes</h3>
+        <p>
+          Don't worry, we have the sets of <span class="text-orange">text colors</span> classes too.
+        </p>
+        <div class="demo">
+          <span class="text-primary">.text-primary</span> or <span class="text-blue">.text-blue</span><br>
+          <span class="text-secondary">.text-secondary</span> or <span class="text-purple">.text-purple</span><br>
+          <span class="text-info">.text-info</span> or <span class="text-teal">.text-teal</span><br>
+          <span class="text-success">.text-success</span> or <span class="text-green">.text-green</span><br>
+          <span class="text-warning">.text-warning</span> or <span class="text-yellow">.text-yellow</span><br>
+          <span class="text-error">.text-error</span> or <span class="text-red">.text-red</span><br>
+          <span class="text-muted">.text-muted</span> or <span class="text-gray">.text-gray</span><br>
+          <span class="text-navy">.text-navy</span><br>
+          <span class="text-aqua">.text-aqua</span><br>
+          <span class="text-olive">.text-olive</span><br>
+          <span class="text-orange">.text-orange</span><br>
+          <span class="text-pink">.text-pink</span><br>
+          <span class="text-maroon">.text-maroon</span><br>
+          <span class="text-white gray">.text-white</span><br>
+          <span class="text-silver">.text-silver</span><br>
+          <span class="text-black">.text-black</span><br>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-color-2" checked>
+          <label for="script-color-2" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;span class="text-primary"&gt;.text-primary&lt;/span&gt; or &lt;span class="text-blue"&gt;.text-blue&lt;/span&gt;
+&lt;span class="text-secondary"&gt;.text-secondary&lt;/span&gt; or &lt;span class="text-purple"&gt;.text-purple&lt;/span&gt;
+&lt;span class="text-info"&gt;.text-info&lt;/span&gt; or &lt;span class="text-teal"&gt;.text-teal&lt;/span&gt;
+&lt;span class="text-success"&gt;.text-success&lt;/span&gt; or &lt;span class="text-green"&gt;.text-green&lt;/span&gt;
+&lt;span class="text-warning"&gt;.text-warning&lt;/span&gt; or &lt;span class="text-yellow"&gt;.text-yellow&lt;/span&gt;
+&lt;span class="text-error"&gt;.text-error&lt;/span&gt; or &lt;span class="text-red"&gt;.text-red&lt;/span&gt;
+&lt;span class="text-muted"&gt;.text-muted&lt;/span&gt; or &lt;span class="text-gray"&gt;.text-gray&lt;/span&gt;
+&lt;span class="text-navy"&gt;.text-navy&lt;/span&gt;
+&lt;span class="text-aqua"&gt;.text-aqua&lt;/span&gt;
+&lt;span class="text-olive"&gt;.text-olive&lt;/span&gt;
+&lt;span class="text-orange"&gt;.text-orange&lt;/span&gt;
+&lt;span class="text-pink"&gt;.text-pink&lt;/span&gt;
+&lt;span class="text-maroon"&gt;.text-maroon&lt;/span&gt;
+&lt;span class="text-white gray"&gt;.text-white&lt;/span&gt;
+&lt;span class="text-silver"&gt;.text-silver&lt;/span&gt;
+&lt;span class="text-black"&gt;.text-black&lt;/span&gt;</pre>
+        </div>
+      </section>
+      
+      <hr>
+      <section id="label">
+        <h2 class="text-secondary"># Labels</h2>
+        <p>
+          Label is inline class to inform something more captivate to look inside any element.
+        </p>
+        <h3>Label default classes</h3>
+        <p>
+          To use label put class <span class="label maroon">.label</span> inside any inline elements.
+        </p>
+        <div class="demo">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. <span class="label">label .primary</span> Duis quis sodales risus. Etiam euismod ornare consequat. </p>
+          <ul>
+            <li>list item 1 <span class="label success">.label .success</span> </li>
+            <li>list item 2
+              <ul>
+                <li>list item 2.1 <span class="label secondary">.label .secondary</span> </li>
+                <li>list item 2.2 <span class="label info">.label .info</span> </li>
+                <li>list item 2.3</li>
+              </ul>
+            </li>
+            <li>list item 3</li>
+          </ul>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-label" checked>
+          <label for="script-label" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;p&gt;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. 
+  &lt;span class="label"&gt;label .primary&lt;/span&gt; Duis quis sodales risus. Etiam euismod ornare consequat. 
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;list item 1 &lt;span class="label success"&gt;.label .success&lt;/span&gt; &lt;/li&gt;
+  &lt;li&gt;list item 2
+    &lt;ul&gt;
+      &lt;li&gt;list item 2.1 &lt;span class="label secondary"&gt;.label .secondary&lt;/span&gt; &lt;/li&gt;
+      &lt;li&gt;list item 2.2 &lt;span class="label info"&gt;.label .info&lt;/span&gt; &lt;/li&gt;
+      &lt;li&gt;list item 2.3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;list item 3&lt;/li&gt;
+&lt;/ul&gt;</pre>
+        </div>
+      </section>
+      <hr>
+      <section id="button">
+        <h2 class="text-secondary"># Buttons</h2>
+        <p>
+          Using button? <span class="label maroon">simple</span> Just use tag <span class="label">button</span> and for a link or input just put class <span class="label success">.button</span> inside.<br>
+          You can still use the <span class="label info">coloring class</span> from previous section or use class <span class="label error">.link</span>.
+        </p>
+        <h3>Default button classes</h3>
+        <div class="demo">
+          <button class="primary">.primary</button>
+          <button class="secondary">.secondary</button>
+          <button class="info">.info</button>
+          <button class="success">.success</button>
+          <button class="warning">.warning</button>
+          <button class="error">.error</button>
+          <button class="link">.link</button>
+          <button disabled>disabled</button>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-button" checked>
+          <label for="script-button" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;button class="primary"&gt;.primary&lt;/button&gt;
+&lt;button class="secondary"&gt;.secondary&lt;/button&gt;
+&lt;button class="info"&gt;.info&lt;/button&gt;
+&lt;button class="success"&gt;.success&lt;/button&gt;
+&lt;button class="warning"&gt;.warning&lt;/button&gt;
+&lt;button class="error"&gt;.error&lt;/button&gt;
+&lt;button class="link"&gt;.link&lt;/button&gt;
+&lt;button disabled&gt;disabled&lt;/button&gt;</pre>
+        </div>
+        <br>
+        <h3>Custom button for links or input</h3>
+        <p>
+          Turn default link or input type as button with <span class="label">.button</span> classes
+        </p>
+        <div class="demo">
+          <a class="button">link .primary</a>
+          <a class="button secondary">link .secondary</a>
+          <a class="button info">link .info</a>
+          <a class="button success">link .success</a>
+          <input type="submit" class="warning" value="input warning" />
+          <input type="submit" class="error" value="input error" />
+          <input type="submit" class="link" value="input link" />
+          <input disabled type="submit" value="input disabled" />
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-button-1" checked>
+          <label for="script-button-1" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;a class="button"&gt;link .primary&lt;/a&gt;
+&lt;a class="button secondary"&gt;link .secondary&lt;/a&gt;
+&lt;a class="button info"&gt;link .info&lt;/a&gt;
+&lt;a class="button success"&gt;link .success&lt;/a&gt;
+&lt;input type="submit" class="warning" value="input warning" /&gt;
+&lt;input type="submit" class="error" value="input error" /&gt;
+&lt;input type="submit" class="link" value="input link" /&gt;
+&lt;input disabled type="submit" value="input disabled" /&gt;</pre>
+        </div>
+        <br>
+        <h3>Toggleable Buttons</h3>
+        <p>
+          It's posible too to turn button unto some toggle checkbox or add class <span class="label maroon">.active</span>
+        </p>
+        <div class="demo">
+          <label>
+            <input type="checkbox" />
+            <span class="toggle button">Toggle</span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span class="toggle button secondary">Toggle</span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span class="toggle button success">Toggle</span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span class="toggle button info">Toggle</span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span class="toggle button warning">Toggle</span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span class="toggle button error">Toggle</span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span class="toggle button link">Toggle</span>
+          </label>
+          <label>
+            <input disabled type="checkbox" />
+            <span disabled class="toggle button">Toggle</span>
+          </label>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-button-2" checked>
+          <label for="script-button-2" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;label&gt;
+  &lt;input type="checkbox" /&gt;
+  &lt;span class="toggle button"&gt;Toggle&lt;/span&gt;
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="checkbox" /&gt;
+  &lt;span class="toggle button secondary"&gt;Toggle&lt;/span&gt;
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="checkbox" /&gt;
+  &lt;span class="toggle button success"&gt;Toggle&lt;/span&gt;
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="checkbox" /&gt;
+  &lt;span class="toggle button info"&gt;Toggle&lt;/span&gt;
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="checkbox" /&gt;
+  &lt;span class="toggle button warning"&gt;Toggle&lt;/span&gt;
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="checkbox" /&gt;
+  &lt;span class="toggle button error"&gt;Toggle&lt;/span&gt;
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input type="checkbox" /&gt;
+  &lt;span class="toggle button link"&gt;Toggle&lt;/span&gt;
+&lt;/label&gt;
+&lt;label&gt;
+  &lt;input disabled type="checkbox" /&gt;
+  &lt;span disabled class="toggle button"&gt;Toggle&lt;/span&gt;
+&lt;/label&gt;</pre>
+        </div>
+        <br>
+        <h3>Sizing Buttons</h3>
+        <p>
+          Use classes from paragraph typography, <span class="label maroon">.extra-large</span>, <span class="label maroon">.large</span>, <span class="label maroon">.medium</span> or <span class="label maroon">.small</span>
+        </p>
+        <div class="demo">
+          <button class="extra-large">button extra-large</button><br>
+          <button class="large">button large</button><br>
+          <button class="medium">button medium</button><br>
+          <button class="small">button small</button>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-button-3" checked>
+          <label for="script-button-3" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;button class="extra-large"&gt;button extra-large&lt;/button&gt;
+&lt;button class="large"&gt;button large&lt;/button&gt;
+&lt;button&gt;button (default)&lt;/button&gt;
+&lt;button class="small"&gt;button small&lt;/button&gt;</pre>
+        </div>
+      </section>
+      <hr>
+      <section id="table">
+        <h2 class="text-secondary"># Tables</h2>
+        <p>
+          Tables include default styles for tables and data sets.
+        </p>
+        <h3>Default Table Styles</h3>
+        <p>
+          Default table are <span class="label maroon">.condensed</span> and <span class="label maroon">.hovered</span>.
+        </p>
+        <div class="">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Release date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>The Shawshank Redemption</td>
+                <td>Crime, Drama</td>
+                <td>14 October 1994</td>
+              </tr>
+              <tr>
+                <td>The Godfather</td>
+                <td>Crime, Drama</td>
+                <td>24 March 1972</td>
+              </tr>
+              <tr>
+                <td>Schindler's List</td>
+                <td>Biography, Drama, History</td>
+                <td>4 February 1994</td>
+              </tr>
+              <tr>
+                <td>Se7en</td>
+                <td>Crime, Drama, Mystery</td>
+                <td>22 September 1995</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-table" checked>
+          <label for="script-table" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Genre&lt;/th&gt;
+      &lt;th&gt;Release date&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;The Shawshank Redemption&lt;/td&gt;
+      &lt;td&gt;Crime, Drama&lt;/td&gt;
+      &lt;td&gt;14 October 1994&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;The Godfather&lt;/td&gt;
+      &lt;td&gt;Crime, Drama&lt;/td&gt;
+      &lt;td&gt;24 March 1972&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Schindler`s List&lt;/td&gt;
+      &lt;td&gt;Biography, Drama, History&lt;/td&gt;
+      &lt;td&gt;4 February 1994&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Se7en&lt;/td&gt;
+      &lt;td&gt;Crime, Drama, Mystery&lt;/td&gt;
+      &lt;td&gt;22 September 1995&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+        </div>
+        <br>
+        <h3>Customize Table Styles</h3>
+        <p>
+         To increase table padding size, use  <span class="label maroon">.table-lg</span> or <span class="label maroon">.table-xl</span> .
+        </p>
+        <br>
+        <span class="label maroon">.table-lg</span>
+        <div class="">
+          <table class="table-lg">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Release date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>The Shawshank Redemption</td>
+                <td>Crime, Drama</td>
+                <td>14 October 1994</td>
+              </tr>
+              <tr>
+                <td>The Godfather</td>
+                <td>Crime, Drama</td>
+                <td>24 March 1972</td>
+              </tr>
+              <tr>
+                <td>Schindler's List</td>
+                <td>Biography, Drama, History</td>
+                <td>4 February 1994</td>
+              </tr>
+              <tr>
+                <td>Se7en</td>
+                <td>Crime, Drama, Mystery</td>
+                <td>22 September 1995</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <span class="label maroon">.table-xl</span>
+        <div class="">
+          <table class="table-xl">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Release date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>The Shawshank Redemption</td>
+                <td>Crime, Drama</td>
+                <td>14 October 1994</td>
+              </tr>
+              <tr>
+                <td>The Godfather</td>
+                <td>Crime, Drama</td>
+                <td>24 March 1972</td>
+              </tr>
+              <tr>
+                <td>Schindler's List</td>
+                <td>Biography, Drama, History</td>
+                <td>4 February 1994</td>
+              </tr>
+              <tr>
+                <td>Se7en</td>
+                <td>Crime, Drama, Mystery</td>
+                <td>22 September 1995</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <p>
+         To turn hover off put  <span class="label maroon">.nohover</span> on the table tag.
+        </p>
+        <table class="nohover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Genre</th>
+              <th>Release date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The Shawshank Redemption</td>
+              <td>Crime, Drama</td>
+              <td>14 October 1994</td>
+            </tr>
+            <tr>
+              <td>The Godfather</td>
+              <td>Crime, Drama</td>
+              <td>24 March 1972</td>
+            </tr>
+            <tr>
+              <td>Schindler's List</td>
+              <td>Biography, Drama, History</td>
+              <td>4 February 1994</td>
+            </tr>
+            <tr>
+              <td>Se7en</td>
+              <td>Crime, Drama, Mystery</td>
+              <td>22 September 1995</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <p>
+         Add striped background with  <span class="label maroon">.striped</span>.
+        </p>
+        <div class="">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Release date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>The Shawshank Redemption</td>
+                <td>Crime, Drama</td>
+                <td>14 October 1994</td>
+              </tr>
+              <tr>
+                <td>The Godfather</td>
+                <td>Crime, Drama</td>
+                <td>24 March 1972</td>
+              </tr>
+              <tr>
+                <td>Schindler's List</td>
+                <td>Biography, Drama, History</td>
+                <td>4 February 1994</td>
+              </tr>
+              <tr>
+                <td>Se7en</td>
+                <td>Crime, Drama, Mystery</td>
+                <td>22 September 1995</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <hr>
+      <section id="form">
+        <h2 class="text-secondary"># Forms</h2>
+        <p>
+          Forms provide the most common control styles used in forms, including input, textarea, select, checkbox, radio and switch.
+        </p>
+        <h3>Form Input</h3>
+        <div class="demo row one two-md">
+          <div>
+            <label>Input Text</label>
+            <input type="text" placeholder="Input Text">
+            <label>Input Password</label>
+            <input type="password" placeholder="Input Password">
+            <label>Input Email</label>
+            <input type="email" placeholder="Input Email">
+            <label>Input Number</label>
+            <input type="number" placeholder="Input Number">
+            <label>Input Color</label>
+            <input type="color"/>
+            <label>Input Date</label>
+            <input type="date"/>
+            <label>Input Range</label>
+            <input type="range"/>
+            <label>Input File</label>
+            <input type="file"/>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-form" checked>
+          <label for="script-form" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;label&gt;Input Text&lt;/label&gt;
+&lt;input type="text" placeholder="Input Text"&gt;
+&lt;label&gt;Input Password&lt;/label&gt;
+&lt;input type="password" placeholder="Input Password"&gt;
+&lt;label&gt;Input Email&lt;/label&gt;
+&lt;input type="email" placeholder="Input Email"&gt;
+&lt;label&gt;Input Number&lt;/label&gt;
+&lt;input type="number" placeholder="Input Number"&gt;
+&lt;label&gt;Input Color&lt;/label&gt;
+&lt;input type="color"/&gt;
+&lt;label&gt;Input Date&lt;/label&gt;
+&lt;input type="date"/&gt;
+&lt;label&gt;Input Range&lt;/label&gt;
+&lt;input type="range"/&gt;
+&lt;label&gt;Input File&lt;/label&gt;
+&lt;input type="file"/&gt;</pre>
+        </div>
+        <br>
+        <h3>Form Textarea</h3>
+        <div class="demo row one two-md">
+          <div>
+            <label>Textarea</label>
+            <textarea placeholder="Textarea Message"></textarea>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-form-1" checked>
+          <label for="script-form-1" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;label&gt;Textarea&lt;/label&gt;
+&lt;textarea placeholder="Textarea Message"&gt;&lt;/textarea&gt;</pre>
+        </div>
+        <br>
+        <h3>Form Radio</h3>
+        <div class="demo">
+          <label>
+            <input type="radio" name="radiodemo">
+            <span class="checkable">Select me</span>
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="radiodemo" checked>
+            <span class="checkable">Or me</span>
+          </label>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-form-2" checked>
+          <label for="script-form-2" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;label&gt;
+  &lt;input type="radio" name="radiodemo"&gt;
+  &lt;span class="checkable"&gt;Select me&lt;/span&gt;
+&lt;/label&gt;
+&lt;br&gt;
+&lt;label&gt;
+  &lt;input type="radio" name="radiodemo" checked&gt;
+  &lt;span class="checkable"&gt;Or me&lt;/span&gt;
+&lt;/label&gt;</pre>
+        </div>
+        <br>
+        <h3>Form Checkbox</h3>
+        <div class="demo">
+          <label>
+            <input type="checkbox" name="">
+            <span class="checkable">Select me</span>
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" checked>
+            <span class="checkable">Select me too</span>
+          </label>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-form-3" checked>
+          <label for="script-form-3" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;label&gt;
+  &lt;input type="checkbox" name=""&gt;
+  &lt;span class="checkable"&gt;Select me&lt;/span&gt;
+&lt;/label&gt;
+&lt;br&gt;
+&lt;label&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="checkable"&gt;Select me too&lt;/span&gt;
+&lt;/label&gt;</pre>
+        </div>
+        <br>
+        <h3>Form Select</h3>
+        <div class="demo row one two-md">
+          <div>
+            <label>Select an option</label>
+            <select>
+              <optgroup label="Select one">
+                <option>Select A</option>
+                <option>Select B</option>
+                <option>Select C</option>
+                <option>Select D</option>
+              </optgroup>
+            </select>
+            <label>Select multiple options</label>
+            <select multiple>
+              <option>Select A</option>
+              <option>Select B</option>
+              <option>Select C</option>
+              <option>Select D</option>
+              <option>Select D</option>
+            </select>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-form-4" checked>
+          <label for="script-form-4" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;label&gt;Select an option&lt;/label&gt;
+&lt;select&gt;
+  &lt;optgroup label="Select one"&gt;
+    &lt;option&gt;Select A&lt;/option&gt;
+    &lt;option&gt;Select B&lt;/option&gt;
+    &lt;option&gt;Select C&lt;/option&gt;
+    &lt;option&gt;Select D&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+&lt;label&gt;Select multiple options&lt;/label&gt;
+&lt;select multiple&gt;
+  &lt;option&gt;Select A&lt;/option&gt;
+  &lt;option&gt;Select B&lt;/option&gt;
+  &lt;option&gt;Select C&lt;/option&gt;
+  &lt;option&gt;Select D&lt;/option&gt;
+  &lt;option&gt;Select D&lt;/option&gt;
+&lt;/select&gt;</pre>
+        </div>
+        <br>
+        <h3>Form Search</h3>
+        <div class="demo row one two-md">
+          <div>
+            <label>Select an option</label>
+            <div class="input" contenteditable>
+              <div class="label maroon" contenteditable="false">
+                <img alt=""> Selected <span class="close">&times;</span>
+              </div>
+              <div class="label maroon" contenteditable="false">
+                <img alt=""> Selected <span class="close">&times;</span>
+              </div>
+              <div class="label maroon" contenteditable="false">
+                <img alt=""> Selected <span class="close">&times;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-form-5" checked>
+          <label for="script-form-5" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;label&gt;Select an option&lt;/label&gt;
+&lt;div class="input" contenteditable&gt;
+  &lt;div class="label maroon" contenteditable="false"&gt;
+    &lt;img alt=""&gt; Selected &lt;span class="close"&gt;&amp;times;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="label maroon" contenteditable="false"&gt;
+    &lt;img alt=""&gt; Selected &lt;span class="close"&gt;&amp;times;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="label maroon" contenteditable="false"&gt;
+    &lt;img alt=""&gt; Selected &lt;span class="close"&gt;&amp;times;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+        <br>
+        <h3>Form Example</h3>
+        <p>Contact Form box</p>
+        <form class="row gap one two-md">
+          <div>
+            <label>Fullname</label>
+            <input placeholder="Full name">
+            <label>Email</label>
+            <input type="email" placeholder="Email">   
+            <label>Upload file</label>
+            <input type="file">   
+            <label>Select an option</label>
+            <select>
+              <optgroup label="Select one">
+                <option>Select A</option>
+                <option>Select B</option>
+                <option>Select C</option>
+                <option>Select D</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="md-2 p-0">
+            <label>Message</label>
+            <textarea placeholder="Message"></textarea>
+          </div>
+          <div>
+            <label>
+              <input type="checkbox" checked>
+              <span class="checkable">Agree</span>
+            </label>
+            <br>
+            <input type="reset" value="Clear" class="silver text-black">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+        <div class="collapse">
+          <input type="checkbox" id="script-form-6" checked>
+          <label for="script-form-6" class="button toggle navy small">VIEW SCRIPT</label>
+          <pre class="microlight">
+&lt;form class="row gap one two-md"&gt;
+  &lt;div&gt;
+    &lt;label&gt;Fullname&lt;/label&gt;
+    &lt;input placeholder="Full name"&gt;
+    &lt;label&gt;Email&lt;/label&gt;
+    &lt;input type="email" placeholder="Email"&gt;   
+    &lt;label&gt;Upload file&lt;/label&gt;
+    &lt;input type="file"&gt;   
+    &lt;label&gt;Select an option&lt;/label&gt;
+    &lt;select&gt;
+      &lt;optgroup label="Select one"&gt;
+        &lt;option&gt;Select A&lt;/option&gt;
+        &lt;option&gt;Select B&lt;/option&gt;
+        &lt;option&gt;Select C&lt;/option&gt;
+        &lt;option&gt;Select D&lt;/option&gt;
+      &lt;/optgroup&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div class="md-2 p-0"&gt;
+    &lt;label&gt;Message&lt;/label&gt;
+    &lt;textarea placeholder="Message"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;
+      &lt;input type="checkbox" checked&gt;
+      &lt;span class="checkable"&gt;Agree&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;br&gt;
+    &lt;input type="reset" value="Clear" class="silver text-black"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+        </div>
+      </section>
+      <hr>
+      <section id="accordion">
+        <h2 class="text-secondary"># Accordion</h2>
+        <p>
+          Bla bla
+        </p>
+        <h3>Pure CSS Accordion</h3>
+        <p>
+          Yes, it is possible to enable accordion effect using only pure CSS script with radio inputs hack. However the markup will not look so pretty, but it works. Just try it ;D
+        </p>
+        <div class="row">
+          <div class="accordion">
+            <div>
+              <input type="radio" name="accordion" id="accordion-1" checked>
+              <label for="accordion-1" class="text-maroon">Accordion A</label>
+              <section>
+                <p>
+                  Accordion Content A
+                </p>
+              </section>
+            </div>
+            <div>
+              <input type="radio" name="accordion" id="accordion-2">
+              <label for="accordion-2" class="text-maroon">Accordion B</label>
+              <section>
+                <p>
+                  Accordion Content B
+                </p>
+              </section>
+            </div>
+            <div>
+              <input type="radio" name="accordion" id="accordion-3">
+              <label for="accordion-3" class="text-maroon">Accordion C</label>
+              <section>
+                <p>
+                  Accordion Content C
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-accordion" checked>
+          <label for="script-accordion" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;div class="accordion"&gt;.
+  &lt;div&gt;
+    &lt;input type="radio" name="accordion" id="accordion-1" checked&gt;
+    &lt;label for="accordion-1" class="text-maroon"&gt;Accordion A&lt;/label&gt;
+    &lt;section&gt;
+      &lt;p&gt;
+        Accordion Content A
+      &lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;input type="radio" name="accordion" id="accordion-2"&gt;
+    &lt;label for="accordion-2" class="text-maroon"&gt;Accordion B&lt;/label&gt;
+    &lt;section&gt;
+      &lt;p&gt;
+        Accordion Content B
+      &lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;input type="radio" name="accordion" id="accordion-3"&gt;
+    &lt;label for="accordion-3" class="text-maroon"&gt;Accordion C&lt;/label&gt;
+    &lt;section&gt;
+      &lt;p&gt;
+        Accordion Content C
+      &lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </div>
+        </div>
+        <br>
+        <h3>JS Accordion</h3>
+        <p>
+          Too lazy setting each ids in label form? If javascript is possible for you, all it need only put <span class="label maroon">.active</span> class inside direct children from accordion class. See example script below.
+        </p>
+        <div class="accordion">
+          <div class="active">
+            <a class="text-maroon" data-accordion>Accordion A</a>
+            <section>
+              <p>
+                Accordion Content A
+              </p>
+            </section>
+          </div>
+          <div>
+            <a class="text-maroon" data-accordion>Accordion B</a>
+            <section>
+              <p>
+                Accordion Content B
+              </p>
+            </section>
+          </div>
+          <div>
+            <a class="text-maroon" data-accordion>Accordion C</a>
+            <section>
+              <p>
+                Accordion Content C
+              </p>
+            </section>
+          </div>
+        </div>
+        
+        <div class="collapse">
+          <input type="checkbox" id="script-accordion-js">
+          <label for="script-accordion-js" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;div class="accordion"&gt;
+  &lt;div class="active"&gt;
+    &lt;a class="text-maroon" data-accordion&gt;Accordion A&lt;/a&gt;
+    &lt;section&gt;
+      &lt;p&gt;
+        Accordion Content A
+      &lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;a class="text-maroon" data-accordion&gt;Accordion B&lt;/a&gt;
+    &lt;section&gt;
+      &lt;p&gt;
+        Accordion Content B
+      &lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;a class="text-maroon" data-accordion&gt;Accordion C&lt;/a&gt;
+    &lt;section&gt;
+      &lt;p&gt;
+        Accordion Content C
+      &lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        <pre class="microlight">Vanilla JS 
+var accordions=document.querySelectorAll('[data-accordion]');
+for(var i=accordions.length; i-- > 0;){
+  // Add click listener each element that has data-accordion
+  accordions[i].addEventListener('click',function(ev){
+    var target=this.parentNode,
+        siblings=target.parentNode.children;
+    // Set all inactive
+    for(var i=siblings.length;i-->0;){
+      siblings[i].classList.remove('active')
+    }
+    // Set current as active
+    target.classList.add('active')
+  })
+}</pre>
+          </div>
+        </div>
+      </section>
+      
+      <hr>
+      <section id="avatar">
+        <h2 class="text-secondary"># Avatar</h2>
+        <p>
+          Bla bla
+        </p>
+        <h3>Basic Avatar</h3>
+        <p>
+          Avatar circling the image, resize this using font class as well <span class="label maroon">.small</span>, <span class="label maroon">.large</span>, <span class="label maroon">.extra-large</span>.
+        </p>
+        <div class="demo inline-block" style="width:100%">
+          <div class="inline-block text-center">
+            <img src="/src/img/avatar.png" class="avatar small"><br>
+            <span class="label maroon">.avatar.small</span>
+          </div>
+          <div class="inline-block text-center">
+            <img src="/src/img/avatar.png" class="avatar"><br>
+            <span class="label maroon">.avatar</span>
+          </div>
+          <div class="inline-block text-center">
+            <img src="/src/img/avatar.png" class="avatar large"><br>
+            <span class="label maroon">.avatar.large</span>
+          </div>
+          <div class="inline-block text-center">
+            <img src="/src/img/avatar.png" class="avatar extra-large"><br>
+            <span class="label maroon">.avatar.extra-large</span>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-avatar" checked>
+          <label for="script-avatar" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;img src="/src/img/avatar.png" class="avatar small"&gt;
+&lt;img src="/src/img/avatar.png" class="avatar"&gt;
+&lt;img src="/src/img/avatar.png" class="avatar large"&gt;
+&lt;img src="/src/img/avatar.png" class="avatar extra-large"&gt;
+</pre>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="badge">
+        <h2 class="text-secondary"># Badge</h2>
+        <p>
+          Bla bla
+        </p>
+        <h3>Basic Badge</h3>
+        <p>
+          Add small pointing labels over <u>top-right</u> element using <span class="label maroon">.badge</span> class.
+        </p>
+        <div class="demo inline-block" style="width:100%">
+          <span class="badge" data-badge="">
+            Notification
+          </span>
+          <br>
+          <button class="badge" data-badge="50">
+            Badge
+          </button>
+          <br>
+          <span class="badge avatar extra-large" data-badge="80">
+            <img src="/src/img/avatar.png">
+          </span>
+          <span class="badge avatar large" data-badge="80">
+            <img src="/src/img/avatar.png">
+          </span>
+          <span class="badge avatar" data-badge="80">
+            <img src="/src/img/avatar.png">
+          </span>
+          <span class="badge avatar small" data-badge="80">
+            <img src="/src/img/avatar.png">
+          </span>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-badge" checked>
+          <label for="script-badge" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;span class="badge" data-badge=""&gt;
+  Notification
+&lt;/span&gt;
+&lt;br&gt;
+&lt;button class="badge" data-badge="50"&gt;
+  Badge
+&lt;/button&gt;
+&lt;br&gt;
+&lt;span class="badge avatar extra-large" data-badge="80"&gt;
+  &lt;img src="/src/img/avatar.png"&gt;
+&lt;/span&gt;
+&lt;span class="badge avatar large" data-badge="80"&gt;
+  &lt;img src="/src/img/avatar.png"&gt;
+&lt;/span&gt;
+&lt;span class="badge avatar" data-badge="80"&gt;
+  &lt;img src="/src/img/avatar.png"&gt;
+&lt;/span&gt;
+&lt;span class="badge avatar small" data-badge="80"&gt;
+  &lt;img src="/src/img/avatar.png"&gt;
+&lt;/span&gt;       
+</pre>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="breadcrumbs">
+        <h2 class="text-secondary"># Breadcrumbs</h2>
+        <p>
+          Breadcrumbs are used as navigational hierarchies to indicate current location.
+        </p>
+        <h3>Breadcrums</h3>
+        <p>
+          Add a container of lists element with the breadcrumb class.
+        </p>
+        <div>
+          <ul class="breadcrumb">
+            <li>
+              <a href="#breadcrumbs" data-tooltip="Home">Home</a>
+            </li>
+            <li>
+              <a href="#breadcrumbs" data-tooltip="Settings">Settings</a>
+            </li>
+            <li>
+              <a href="#breadcrumbs" data-tooltip="Change Avatar">Change avatar</a>
+            </li>
+          </ul>
+          
+          <ul class="breadcrumb">
+            <li>
+              <a href="#breadcrumbs" data-tooltip="Home">Home</a>
+            </li>
+            <li>
+              <a href="#breadcrumbs" data-tooltip="Settings">Settings</a>
+            </li>
+            <li>
+              Search result: 
+              <a href="#breadcrumbs" data-tooltip="Search result: DraxCSS">DraxCSS</a>
+            </li>
+          </ul>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-breadcrumb" checked>
+          <label for="script-breadcrumb" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;ul class=&quot;breadcrumb&quot;&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#breadcrumbs&quot; data-tooltip=&quot;Home&quot;&gt;Home&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#breadcrumbs&quot; data-tooltip=&quot;Settings&quot;&gt;Settings&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#breadcrumbs&quot; data-tooltip=&quot;Change Avatar&quot;&gt;Change avatar&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class=&quot;breadcrumb&quot;&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#breadcrumbs&quot; data-tooltip=&quot;Home&quot;&gt;Home&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;#breadcrumbs&quot; data-tooltip=&quot;Settings&quot;&gt;Settings&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		Search result: 
+		&lt;a href=&quot;#breadcrumbs&quot; data-tooltip=&quot;Search result: DraxCSS&quot;&gt;DraxCSS&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</pre>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="card">
+        <h2 class="text-secondary"># Cards</h2>
+        <p>
+          Cards are flexible content containers.
+        </p>
+        <h3>Basic Card</h3>
+        <p>
+          Add a container element with the card class. Child element is semantic html tags, header, section and footer. The image can be placed in any position.
+        </p>
+        <br>
+        <div class="row gap one two-sm three-lg">
+          <div>
+            <article class="card">
+              <img src="/src/img/forest.jpg">
+              <p>This is a nice forest. What do you want to do with it?</p>
+            </article>
+          </div>
+          <div>
+            <article class="card">
+              <header>
+                <h3>Header</h3>
+              </header>
+              <section>Content.. Lorem ipsum dolor sit amet, consectetur adipiscing elit</section>
+              <footer>
+                Footer!
+              </footer>
+            </article>
+          </div>
+          <div>
+            <input type="checkbox" id="cardtoggle">
+            <article class="card">
+              <p>Can be collapsed too..<br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
+              <label for="cardtoggle" class="close">&times;</label>
+            </article>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-card" checked>
+          <label for="script-card" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;article class="card"&gt;
+  &lt;img src="/src/img/forest.jpg"&gt;
+  &lt;p&gt;This is a nice forest. What do you want to do with it?&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;article class="card"&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Header&lt;/h3&gt;
+  &lt;/header&gt;
+  &lt;section&gt;Content.. Lorem ipsum dolor sit amet, consectetur adipiscing elit&lt;/section&gt;
+  &lt;footer&gt;
+    Footer!
+  &lt;/footer&gt;
+&lt;/article&gt;
+
+&lt;input type="checkbox" id="cardtoggle"&gt;
+&lt;article class="card"&gt;
+  &lt;p&gt;Can be collapsed too..&lt;br&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...&lt;/p&gt;
+  &lt;label for="cardtoggle" class="close"&gt;&amp;times;&lt;/label&gt;
+&lt;/article&gt;</pre>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="carousel">
+        <h2 class="text-secondary"># Carousel</h2>
+        <p>
+        </p>
+        <h3>Pure CSS Carousel</h3>
+        <div class="carousel">
+          <input id="slide-1" type="radio" name="carousel" checked>
+          <input id="slide-2" type="radio" name="carousel">
+          <input id="slide-3" type="radio" name="carousel">
+          <input id="slide-4" type="radio" name="carousel">
+          <section>
+            <div>
+              <img src="/src/img/forest.jpg">
+            </div>
+            <div>
+              <img src="/src/img/space.jpg">
+            </div>
+            <div>
+              <img src="/src/img/forest.jpg">
+            </div>
+            <div>
+              <img src="/src/img/space.jpg">
+            </div>
+          </section>
+          <div class="indicators">
+            <label for="slide-1">1</label>
+            <label for="slide-2">2</label>
+            <label for="slide-3">3</label>
+            <label for="slide-4">4</label>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-carousel" checked>
+          <label for="script-carousel" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;div class=&quot;carousel&quot;&gt;
+	&lt;input id=&quot;slide-1&quot; type=&quot;radio&quot; name=&quot;carousel&quot; checked&gt;
+	&lt;input id=&quot;slide-2&quot; type=&quot;radio&quot; name=&quot;carousel&quot;&gt;
+	&lt;input id=&quot;slide-3&quot; type=&quot;radio&quot; name=&quot;carousel&quot;&gt;
+	&lt;input id=&quot;slide-4&quot; type=&quot;radio&quot; name=&quot;carousel&quot;&gt;
+	&lt;section&gt;
+		&lt;div&gt;
+			&lt;img src=&quot;/src/img/forest.jpg&quot;&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;img src=&quot;/src/img/space.jpg&quot;&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;img src=&quot;/src/img/forest.jpg&quot;&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;img src=&quot;/src/img/space.jpg&quot;&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+	&lt;div class=&quot;indicators&quot;&gt;
+		&lt;label for=&quot;slide-1&quot;&gt;1&lt;/label&gt;
+		&lt;label for=&quot;slide-2&quot;&gt;2&lt;/label&gt;
+		&lt;label for=&quot;slide-3&quot;&gt;3&lt;/label&gt;
+		&lt;label for=&quot;slide-4&quot;&gt;4&lt;/label&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+					</div>
+				</div>
+				<br>
+        <h3>JS Carousel</h3>
+        <div class="carousel">
+          <section>
+            <div class="active">
+              <img src="/src/img/forest.jpg">
+            </div>
+            <div>
+              <img src="/src/img/space.jpg">
+            </div>
+            <div>
+              <img src="/src/img/forest.jpg">
+            </div>
+            <div>
+              <img src="/src/img/space.jpg">
+            </div>
+          </section>
+          <div class="indicators">
+            <a data-carousel class="active">1</a>
+            <a data-carousel>2</a>
+            <a data-carousel>3</a>
+            <a data-carousel>4</a>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-carousel-js">
+          <label for="script-carousel-js" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;div class=&quot;carousel&quot;&gt;
+	&lt;section&gt;
+		&lt;div class=&quot;active&quot;&gt;
+			&lt;img src=&quot;/src/img/forest.jpg&quot;&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;img src=&quot;/src/img/space.jpg&quot;&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;img src=&quot;/src/img/forest.jpg&quot;&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;img src=&quot;/src/img/space.jpg&quot;&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+	&lt;div class=&quot;indicators&quot;&gt;
+		&lt;a data-carousel class=&quot;active&quot;&gt;1&lt;/a&gt;
+		&lt;a data-carousel&gt;2&lt;/a&gt;
+		&lt;a data-carousel&gt;3&lt;/a&gt;
+		&lt;a data-carousel&gt;4&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+        <pre class="microlight">Vanilla JS
+var carousel=document.querySelectorAll('[data-carousel]');
+for(var i=carousel.length;i-->0;){
+	// Add click listener each element that has data-carousel
+	carousel[i].addEventListener('click',function(ev){
+		var target=this.parentNode,
+				indicators=target.children,
+				index=Array.prototype.indexOf.call(indicators,this),
+				contents=target.parentNode.querySelector('section').children;
+		// Set all indicator and content as inactive
+		for(var i=0;i&lt;contents.length;i++){
+			indicators[i].classList.remove('active')
+			contents[i].classList.remove('active')
+		}
+		// Set current target index as active
+		indicators[index].classList.add('active')
+		contents[index].classList.add('active')
+	})    
+}</pre>
+					</div>
+				</div>
+      </section>
+      <hr>
+      <section id="collapse">
+        <h2 class="text-secondary"># Collapse</h2>
+      </section>
+      <hr>
+      <section id="dropdown">
+        <h2 class="text-secondary"># Dropdowns</h2>
+        <p>
+        </p>
+        <h3>Pure CSS Dropdowns</h3>
+        <div class="group dropdown">
+          <a class="button">Detail</a>
+          <a class="button" data-dropdown tabindex="0">&#x25BE;</a>
+          <ul class="menu">
+            <li class="menu-item"><a href="#dropdowns">Slack</a></li>
+            <li class="menu-item"><a href="#dropdowns">Hipchat</a></li>
+            <li class="menu-item"><a href="#dropdowns">Skype</a></li>
+          </ul>
+        </div>
+      </section>
+      <hr>
+      <section id="lightbox">
+        <h2 class="text-secondary"># Lightbox</h2>
+        <p>
+          Lightbox is a modal specifically for image gallery
+        </p>
+        <h3>Pure CSS Lightbox</h3>
+        <label for="lightbox-forest" class="lightbox-indicator">
+          <img src="/src/img/forest.jpg">
+        </label>
+        <label for="lightbox-space" class="lightbox-indicator">
+          <img src="/src/img/space.jpg">
+        </label>
+        <div class="lightbox">
+          <input id="lightbox-forest" type="checkbox"/>
+          <label for="lightbox-forest" class="overlay"></label>
+          <article>
+            <img src="/src/img/forest.jpg">
+          </article>
+        </div>
+        <div class="lightbox">
+          <input id="lightbox-space" type="checkbox"/>
+          <label for="lightbox-space" class="overlay"></label>
+          <article>
+            <img src="/src/img/space.jpg">
+          </article>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-lightbox-css" checked>
+          <label for="script-lightbox-css" class="button small navy toggle">VIEW SCRIPT</label>
+        <pre class="microlight">HTML Markup
+&lt;label for="lightbox-forest" class="lightbox-indicator"&gt;
+  &lt;img src="/src/img/forest.jpg"&gt;
+&lt;/label&gt;
+&lt;label for="lightbox-space" class="lightbox-indicator"&gt;
+  &lt;img src="/src/img/space.jpg"&gt;
+&lt;/label&gt;
+&lt;div class="lightbox"&gt;
+  &lt;input id="lightbox-forest" type="checkbox"/&gt;
+  &lt;label for="lightbox-forest" class="overlay"&gt;&lt;/label&gt;
+  &lt;article&gt;
+    &lt;img src="/src/img/forest.jpg"&gt;
+  &lt;/article&gt;
+&lt;/div&gt;
+&lt;div class="lightbox"&gt;
+  &lt;input id="lightbox-space" type="checkbox"/&gt;
+  &lt;label for="lightbox-space" class="overlay"&gt;&lt;/label&gt;
+  &lt;article&gt;
+    &lt;img src="/src/img/space.jpg"&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</pre>
+        </div>
+        <br>
+        <h3>JS lightbox</h3>
+        <p>
+          JS Lightbox  is using signature <span class="label maroon">data-lightbox</span> followed with element id as target
+        </p>
+        <img src="/src/img/forest.jpg" data-lightbox="#lightbox-forest-js">
+        <img src="/src/img/space.jpg" data-lightbox="#lightbox-space-js">
+        <div class="lightbox" id="lightbox-forest-js">
+          <article>
+            <img src="/src/img/forest.jpg">
+          </article>
+        </div>
+        <div class="lightbox" id="lightbox-space-js">
+          <article>
+            <img src="/src/img/space.jpg">
+          </article>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-lightbox-js">
+          <label for="script-lightbox-js" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;img src="/src/img/forest.jpg" data-lightbox="#lightbox-forest-js"&gt;
+&lt;img src="/src/img/space.jpg" data-lightbox="#lightbox-space-js"&gt;
+&lt;div class="lightbox" id="lightbox-forest-js"&gt;
+  &lt;article&gt;
+    &lt;img src="/src/img/forest.jpg"&gt;
+  &lt;/article&gt;
+&lt;/div&gt;
+&lt;div class="lightbox" id="lightbox-space-js"&gt;
+  &lt;article&gt;
+    &lt;img src="/src/img/space.jpg"&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</pre>
+        <pre class="microlight">Vanilla JS
+var lightbox=document.querySelectorAll('[data-lightbox]');
+for(var i=lightbox.length; i-- > 0;){
+  // Add click listener each element that has data-lightbox
+  lightbox[i].addEventListener('click',function(ev){
+    var box=document.querySelector(this.dataset.lightbox)
+    box.classList.add('active')
+    // Add click event listener overlay background
+    box.addEventListener('click',function resetbox(ev){
+      if(ev.target.classList.contains('lightbox')){
+        box.classList.remove('active')
+        // Prevent adding same event listener
+        box.removeEventListener('click',resetbox)
+      }
+    })
+  })
+}</pre>
+</div>
+</div>
+      </section>
+      <hr>
+      <section id="modal">
+        <h2 class="text-secondary"># Modal</h2>
+        <p>
+          Bla bla
+        </p>
+        <h3>Pure CSS Modal</h3>
+        <label for="modal-popup" class="button">Open Modal</label>
+        <div class="modal">
+          <input id="modal-popup" type="checkbox"/>
+          <label for="modal-popup" class="overlay"></label>
+          <article>
+            <header>
+              <h3>Great offer</h3>
+              <label for="modal-popup" class="close">&times;</label>
+            </header>
+            <section class="content">
+              We have a special offer for you. I am sure you will love it! However this does look spammy...
+            </section>
+            <footer>
+              <a class="button" href="#">See offer</a>
+              <label for="modal-popup" class="button error">
+                Cancel
+              </label>
+            </footer>
+          </article>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-modal" checked>
+          <label for="script-modal" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;label for="modal-popup" class="button"&gt;Open Modal&lt;/label&gt;
+&lt;div class="modal"&gt;
+  &lt;input id="modal-popup" type="checkbox"/&gt;
+  &lt;label for="modal-popup" class="overlay"&gt;&lt;/label&gt;
+  &lt;article&gt;
+    &lt;header&gt;
+      &lt;h3&gt;Great offer&lt;/h3&gt;
+      &lt;label for="modal-popup" class="close"&gt;&amp;times;&lt;/label&gt;
+    &lt;/header&gt;
+    &lt;section class="content"&gt;
+      We have a special offer for you. I am sure you will love it! However this does look spammy...
+    &lt;/section&gt;
+    &lt;footer&gt;
+      &lt;a class="button" href="#"&gt;See offer&lt;/a&gt;
+      &lt;label for="modal-popup" class="button error"&gt;
+        Cancel
+      &lt;/label&gt;
+    &lt;/footer&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</pre></div>
+        <br>
+        <h3>JS Modal</h3>
+        <button data-modal="#modal-popup-js">Open Modal</button>
+        <div class="modal" id="modal-popup-js">
+          <article>
+            <header>
+              <h3>Great offer</h3>
+              <a class="close">&times;</a>
+            </header>
+            <section class="content">
+              We have a special offer for you. I am sure you will love it!
+            </section>
+            <footer>
+              <a class="button" href="#">See offer</a>
+              <button class="error close">
+                Cancel
+              </button>
+            </footer>
+          </article>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-modal-js">
+          <label for="script-modal-js" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;button data-modal="#modal-popup-js"&gt;Open Modal&lt;/button&gt;
+&lt;div class="modal" id="modal-popup-js"&gt;
+  &lt;article&gt;
+    &lt;header&gt;
+      &lt;h3&gt;Great offer&lt;/h3&gt;
+      &lt;a class="close"&gt;&amp;times;&lt;/a&gt;
+    &lt;/header&gt;
+    &lt;section class="content"&gt;
+      We have a special offer for you. I am sure you will love it! 
+    &lt;/section&gt;
+    &lt;footer&gt;
+      &lt;a class="button" href="#"&gt;See offer&lt;/a&gt;
+      &lt;button class="error close"&gt;
+        Cancel
+      &lt;/button&gt;
+    &lt;/footer&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</pre>
+
+        <pre class="microlight">Vanilla JS
+var modals=document.querySelectorAll('[data-modal]');
+for(var i=modals.length; i-- > 0;){
+  // Add click listener each element that has data-lightbox
+  modals[i].addEventListener('click',function(ev){
+    var box=document.querySelector(this.dataset.modal)
+    box.classList.add('active')
+    // Add click event listener overlay background
+    box.addEventListener('click',function resetbox(ev){
+      // Listen if overlay background or close button
+      if(ev.target.classList.contains('modal') || ev.target.classList.contains('close')){
+        box.classList.remove('active')
+        // Prevent adding same event listener
+        box.removeEventListener('click',resetbox)
+      }
+    })
+  })
+}</pre>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="step">
+        <h2 class="text-secondary"># Steps</h2>
+        <p>
+          Steps are progress indicators of a sequence of task steps.
+        </p>
+        <h3>Basic Steps</h3>
+        <div>
+          <ul class="step">
+            <li>
+              <a data-tooltip="Step 1">Step 1</a>
+            </li>
+            <li>
+              <a class="tooltip" data-tooltip="Step 2">Step 2</a>
+            </li>
+            <li class="active">
+              <a class="tooltip" data-tooltip="Step 3">Step 3</a>
+            </li>
+            <li>
+              <a class="tooltip" data-tooltip="Step 4">Step 4</a>
+            </li>
+          </ul>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-modal-js">
+          <label for="script-modal-js" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup</pre>
+					</div>
+				</div>
+      </section>
+      <hr>
+      
+      <section id="tab">
+        <h2 class="text-secondary"># Tabs</h2>
+        <p>
+          Bla bla
+        </p>
+        <h3>Pure CSS Tabs</h3>
+        <p>
+          Just like Accordion did, tabs are radioable. You can put button toggle anywhere outside tabs container using <span class="label maroon">label for</span> but the indicator wont show up nicely there.
+        </p>
+        <div class="row">
+          <div class="tabs">
+            <input type="radio" name="tab" id="tab-1" checked>
+            <input type="radio" name="tab" id="tab-2">
+            <input type="radio" name="tab" id="tab-3">
+            <div class="group indicators">
+              <label for="tab-1">Tab1</label>
+              <label for="tab-2">Tab2</label>
+              <label for="tab-3">Tab3</label>
+            </div>
+            <section>
+              <article>
+                <p>This is content Tab 1. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.</p>
+              </article>
+              <article>
+                <p>This is content Tab 2. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.</p>
+              </article>
+              <article>
+                <p>This is content Tab 3. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.</p>
+              </article>
+            </section>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-tab" checked>
+          <label for="script-tab" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;div class="tabs"&gt;
+  &lt;input type="radio" name="tab" id="tab-1" checked&gt;
+  &lt;input type="radio" name="tab" id="tab-2"&gt;
+  &lt;input type="radio" name="tab" id="tab-3"&gt;
+  &lt;div class="indicators"&gt;
+    &lt;label for="tab-1"&gt;Tab1&lt;/label&gt;
+    &lt;label for="tab-2"&gt;Tab2&lt;/label&gt;
+    &lt;label for="tab-3"&gt;Tab3&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;section&gt;
+    &lt;article&gt;
+      &lt;p&gt;This is content Tab 1. &lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article&gt;
+      &lt;p&gt;This is content Tab 2. &lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article&gt;
+      &lt;p&gt;This is content Tab 3. &lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</pre>
+          </div>
+        </div>
+        <br>
+        <h3>JS Tabs</h3>
+        <p>
+          This framework mainly focuses on how well it looks on any frontend JS framework without adding complex dependency of external JS. If you like to use simple JS to toggle anything just use <span class="label maroon">.active</span>. Again, see example below.
+        </p>
+        <div class="row">
+          <div class="tabs">
+            <div class="group indicators">
+              <a data-tab class="active">Tab1</a>
+              <a data-tab>Tab2</a>
+              <a data-tab>Tab3</a>
+            </div>
+            <section>
+              <article class="active">
+                <p>This is content Tab 1. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.</p>
+              </article>
+              <article>
+                <p>This is content Tab 2. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.</p>
+              </article>
+              <article>
+                <p>This is content Tab 3. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.</p>
+              </article>
+            </section>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-tab-js">
+          <label for="script-tab-js" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;div class="tabs"&gt;
+  &lt;div class="indicators"&gt;
+    &lt;a data-tab class="active"&gt;Tab1&lt;/a&gt;
+    &lt;a data-tab&gt;Tab2&lt;/a&gt;
+    &lt;a data-tab&gt;Tab3&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;section&gt;
+    &lt;article class="active"&gt;
+      &lt;p&gt;This is content Tab 1. &lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article&gt;
+      &lt;p&gt;This is content Tab 2. &lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article&gt;
+      &lt;p&gt;This is content Tab 3. &lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent risus leo, dictum in vehicula sit amet, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</pre>
+        <pre class="microlight">Vanilla JS
+var tabs=document.querySelectorAll('[data-tab]');
+for(var i=tabs.length;i-->0;){
+  // Add click listener each element that has data-tab
+  tabs[i].addEventListener('click',function(ev){
+    var target=this.parentNode,
+        indicators=target.children,
+        index=Array.prototype.indexOf.call(indicators,this),
+        contents=target.parentNode.querySelector('section').children;
+    // Set all indicator and content as inactive
+    for(var i=0;i&lt;contents.length;i++){
+      indicators[i].classList.remove('active')
+      contents[i].classList.remove('active')
+    }
+    // Set current target index as active
+    indicators[index].classList.add('active')
+    contents[index].classList.add('active')
+  })    
+}</pre>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="tile">
+        <h2 class="text-secondary"># Tiles</h2>
+        <p>
+          Bla bla
+        </p>
+        <h3>Basic Tile</h3>
+        <div class="row gap one two-md">
+          <div>
+            <article class="tile">
+              <img src="/src/img/avatar.png" class="avatar small">
+              <section>
+                <h4>Title of the current tile</h4>
+                This is a nice forest. What do you want to do with it?
+              </section>
+              <div class="action small nowrap">
+                <button class="p-1">Join</button>
+                <button class="p-1 info">Contact</button>
+              </div>
+            </article>
+            
+            <br>
+            <p>
+              Compact version of tile using class <span class="label maroon">.tile.compact</span>
+            </p>
+            <article class="tile compact">
+              <img src="/src/img/avatar.png" class="avatar small">
+              <section>
+                <p>
+                  This is a nice forest. What do you want to do with it?
+                  <br>
+                  <span class="text-muted">Description</span>
+                </p>
+              </section>
+              <div class="action">
+                <button class="p-0 px-1 m-0 link">&vellip;</button>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-tile" checked>
+          <label for="script-tile" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;article class="tile"&gt;
+  &lt;img src="/src/img/avatar.png" class="avatar small"&gt;
+  &lt;section&gt;
+    &lt;h4&gt;Title of the current tile&lt;/h4&gt;
+    This is a nice forest. What do you want to do with it?
+  &lt;/section&gt;
+  &lt;div class="action small nowrap"&gt;
+    &lt;button class="p-1"&gt;Join&lt;/button&gt;
+    &lt;button class="p-1 info"&gt;Contact&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;article class="tile compact"&gt;
+  &lt;img src="/src/img/avatar.png" class="avatar small"&gt;
+  &lt;section&gt;
+    &lt;p&gt;
+      This is a nice forest. What do you want to do with it?
+      &lt;br&gt;
+      &lt;span class="text-muted"&gt;Description&lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/section&gt;
+  &lt;div class="action"&gt;
+    &lt;button class="p-0 px-1 m-0 link"&gt;&amp;vellip;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre>
+          </div>
+        </div>
+        <br>
+        <h3>Complex Tiles</h3>
+        <div class="row gap one two-md">
+          <div>
+            <article class="tile">
+              <img src="/src/img/avatar.png" class="avatar small">
+              <section>
+                <h4>Title</h4>
+                <p>This is a nice forest. What do you want to do with it?</p>
+                <footer class="small">
+                  <button>Reply</button>
+                  <button class="info">Rate</button>
+                </footer>
+                <article class="tile">
+                  <img src="/src/img/avatar.png" class="avatar small">
+                  <section>
+                    <h4>Title</h4>
+                    This is a nice forest. What do you want to do with it?
+                  </section>
+                </article>
+                <article class="tile">
+                  <div>
+                    <img src="/src/img/avatar.png" class="avatar small">
+                  </div>
+                  <section>
+                    <h4>Title</h4>
+                    This is a nice forest. What do you want to do with it?
+                  </section>
+                </article>
+              </section>
+            </article>
+          </div>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-tile-1" checked>
+          <label for="script-tile-1" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;article class="tile"&gt;
+  &lt;img src="/src/img/avatar.png" class="avatar small"&gt;
+  &lt;section&gt;
+    &lt;h4&gt;Title&lt;/h4&gt;
+    &lt;p&gt;This is a nice forest. What do you want to do with it?&lt;/p&gt;
+    &lt;footer class="small"&gt;
+      &lt;button&gt;Reply&lt;/button&gt;
+      &lt;button class="info"&gt;Rate&lt;/button&gt;
+    &lt;/footer&gt;
+    &lt;article class="tile"&gt;
+      &lt;img src="/src/img/avatar.png" class="avatar small"&gt;
+      &lt;section&gt;
+        &lt;h4&gt;Title&lt;/h4&gt;
+        This is a nice forest. What do you want to do with it?
+      &lt;/section&gt;
+    &lt;/article&gt;
+    &lt;article class="tile"&gt;
+      &lt;div&gt;
+        &lt;img src="/src/img/avatar.png" class="avatar small"&gt;
+      &lt;/div&gt;
+      &lt;section&gt;
+        &lt;h4&gt;Title&lt;/h4&gt;
+        This is a nice forest. What do you want to do with it?
+      &lt;/section&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/article&gt;</pre>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="toast">
+        <h2 class="text-secondary"># Toasts</h2>
+        <p>
+        </p>
+        <h3>Basic Toasts</h3>
+        <div class="demo">
+          <div class="toast">
+            Default Toast.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div class="toast primary">
+            Primary Toast.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div class="toast secondary">
+            Secondary Toast.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div class="toast info">
+            Info Toast.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div class="toast success">
+            Success Toast.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <div class="toast warning">
+            Warning Toast.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </div>
+          <input type="checkbox" id="toast-close">
+          <div class="toast error">
+            Error Toast.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <label for="toast-close" class="close">&times;</label>
+          </div>
+        </div>
+      </section>
+      <section id="tooltip">
+        <h2 class="text-secondary"># Tooltip</h2>
+        <p>
+        </p>
+        <h3>Tooltip</h3>
+        <div class="demo">
+          <button data-tooltip="This is a great tooltip">
+            Top (default)
+          </button>
+          <button data-tooltip="This is a great tooltip" class="tooltip-bottom">
+            Bottom
+          </button>
+          <button data-tooltip="This is a great tooltip" class="tooltip-left">
+            Left
+          </button>
+          <button data-tooltip="This is a great tooltip" class="tooltip-right">
+            Right
+          </button>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-tooltip" checked>
+          <label for="script-tooltip" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;button data-tooltip="This is a great tooltip" class="tooltip-top"&gt;
+  Top
+&lt;/button&gt;
+&lt;button data-tooltip="This is a great tooltip"&gt;
+  Bottom (default)
+&lt;/button&gt;
+&lt;button data-tooltip="This is a great tooltip" class="tooltip-left"&gt;
+  Left
+&lt;/button&gt;
+&lt;button data-tooltip="This is a great tooltip" class="tooltip-right"&gt;
+  Right
+&lt;/button&gt;</pre>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="tree">
+        <h2 class="text-secondary"># Tree</h2>
+        <p>
+        </p>
+        <h3>Pure CSS Trees</h3>
+        <div class="demo">
+          <nav>
+            <ul class="tree">
+              <li>
+                <input type="checkbox" id="list-1">
+                <label for="list-1">List 1</label>
+                <ul>
+                  <li>List 1.1</li>
+                  <li>List 1.1</li>
+                  <li>List 1.1</li>
+                </ul>
+              </li>
+              <li>
+                <input type="checkbox" id="list-2">
+                <label for="list-2">List 2</label>
+                <ul>
+                  <li>
+                    <input type="checkbox" id="list-2-1">
+                    <label for="list-2-1">List 2</label>
+                    <ul>
+                      <li>List 2.1.1</li>
+                      <li>List 2.1.1</li>
+                      <li>List 2.1.1</li>
+                    </ul>
+                  </li>
+                  <li>List 2.1</li>
+                  <li>List 2.1</li>
+                </ul>
+              </li>
+              <li>
+                <input type="checkbox" id="list-3">
+                <label for="list-3">List 3</label>
+                <ul>
+                  <li>List 3.1</li>
+                  <li>List 3.1</li>
+                  <li>List 3.1</li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-tree" checked>
+          <label for="script-tree" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;nav&gt;
+  &lt;ul class="tree"&gt;
+    &lt;li&gt;
+      &lt;input type="checkbox" id="list-1"&gt;
+      &lt;label for="list-1"&gt;List 1&lt;/label&gt;
+      &lt;ul&gt;
+        &lt;li&gt;List 1.1&lt;/li&gt;
+        &lt;li&gt;List 1.1&lt;/li&gt;
+        &lt;li&gt;List 1.1&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type="checkbox" id="list-2"&gt;
+      &lt;label for="list-2"&gt;List 2&lt;/label&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+        &lt;input type="checkbox" id="list-2-1"&gt;
+        &lt;label for="list-2-1"&gt;List 2&lt;/label&gt;
+        &lt;ul&gt;
+          &lt;li&gt;List 2.1.1&lt;/li&gt;
+          &lt;li&gt;List 2.1.1&lt;/li&gt;
+          &lt;li&gt;List 2.1.1&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;List 2.1&lt;/li&gt;
+        &lt;li&gt;List 2.1&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type="checkbox" id="list-3"&gt;
+      &lt;label for="list-3"&gt;List 3&lt;/label&gt;
+      &lt;ul&gt;
+        &lt;li&gt;List 3.1&lt;/li&gt;
+        &lt;li&gt;List 3.1&lt;/li&gt;
+        &lt;li&gt;List 3.1&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/nav&gt;</pre>
+          </div>
+        </div>
+        <br>
+        <h3>JS Trees</h3>
+        <div class="demo">
+          <nav>
+            <ul class="tree">
+              <li class="active">
+                <a data-tree>List 1</a>
+                <ul>
+                  <li>List 1.1</li>
+                  <li>List 1.1</li>
+                  <li>List 1.1</li>
+                </ul>
+              </li>
+              <li>
+                <a data-tree>List 2</a>
+                <ul>
+                  <li>
+                    <a data-tree>List 2</a>
+                    <ul>
+                      <li>List 2.1.1</li>
+                      <li>List 2.1.1</li>
+                      <li>List 2.1.1</li>
+                    </ul>
+                  </li>
+                  <li>List 2.1</li>
+                  <li>List 2.1</li>
+                </ul>
+              </li>
+              <li>
+                <a data-tree>List 3</a>
+                <ul>
+                  <li>List 3.1</li>
+                  <li>List 3.1</li>
+                  <li>List 3.1</li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="collapse">
+          <input type="checkbox" id="script-tree-js">
+          <label for="script-tree-js" class="button small navy toggle">VIEW SCRIPT</label>
+          <div>
+        <pre class="microlight">HTML Markup
+&lt;nav&gt;
+  &lt;ul class="tree"&gt;
+    &lt;li class="active"&gt;
+      &lt;a data-tree&gt;List 1&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;List 1.1&lt;/li&gt;
+        &lt;li&gt;List 1.1&lt;/li&gt;
+        &lt;li&gt;List 1.1&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a data-tree&gt;List 2&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;a data-tree&gt;List 2&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;List 2.1.1&lt;/li&gt;
+            &lt;li&gt;List 2.1.1&lt;/li&gt;
+            &lt;li&gt;List 2.1.1&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;List 2.1&lt;/li&gt;
+        &lt;li&gt;List 2.1&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a data-tree&gt;List 3&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;List 3.1&lt;/li&gt;
+        &lt;li&gt;List 3.1&lt;/li&gt;
+        &lt;li&gt;List 3.1&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+        <pre class="microlight">Vanilla JS
+var trees=document.querySelectorAll('[data-tree]');
+for(var i=trees.length;i-->0;){
+  // Add click listener each element that has data-accordion
+  trees[i].addEventListener('click',function(ev){
+    var target=this.parentNode,
+        siblings=target.parentNode.children;        
+    // Toggle class element active
+    target.classList.toggle('active')
+  })
+}</pre>
+          </div>
+        </div>
+      </section>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <footer>Copyright <b>&copy; Drax 2020</b> | License MIT</footer>
+    </section>
+  </main>
+  <script>
+  var accordions=document.querySelectorAll('[data-accordion]');
+  for(var i=accordions.length; i-- > 0;){
+    // Add click listener each element that has data-accordion
+    accordions[i].addEventListener('click',function(ev){
+      var target=this.parentNode,
+          siblings=target.parentNode.children;
+      // Set all inactive
+      for(var i=siblings.length;i-->0;){
+        siblings[i].classList.remove('active')
+      }
+      // Set current as active
+      target.classList.add('active')
+    })
+  }
+  
+  var carousel=document.querySelectorAll('[data-carousel]');
+  for(var i=carousel.length;i-->0;){
+    // Add click listener each element that has data-carousel
+    carousel[i].addEventListener('click',function(ev){
+      var target=this.parentNode,
+          indicators=target.children,
+          index=Array.prototype.indexOf.call(indicators,this),
+          contents=target.parentNode.querySelector('section').children;
+      // Set all indicator and content as inactive
+      for(var i=0;i<contents.length;i++){
+        indicators[i].classList.remove('active')
+        contents[i].classList.remove('active')
+      }
+      // Set current target index as active
+      indicators[index].classList.add('active')
+      contents[index].classList.add('active')
+    })    
+  }
+  var lightbox=document.querySelectorAll('[data-lightbox]');
+  for(var i=lightbox.length; i-- > 0;){
+    // Add click listener each element that has data-lightbox
+    lightbox[i].addEventListener('click',function(ev){
+      var box=document.querySelector(this.dataset.lightbox)
+      box.classList.add('active')
+      // Add click event listener overlay background
+      box.addEventListener('click',function resetbox(ev){
+        if(ev.target.classList.contains('lightbox')){
+          box.classList.remove('active')
+          // Prevent adding same event listener
+          box.removeEventListener('click',resetbox)
+        }
+      })
+    })
+  }
+  
+  var modals=document.querySelectorAll('[data-modal]');
+  for(var i=modals.length; i-- > 0;){
+    // Add click listener each element that has data-modal
+    modals[i].addEventListener('click',function(ev){
+      var box=document.querySelector(this.dataset.modal)
+      box.classList.add('active')
+      // Add click event listener overlay background
+      box.addEventListener('click',function resetbox(ev){
+        // Listen if overlay background or close button
+        if(ev.target.classList.contains('modal')||ev.target.classList.contains('close')){
+          box.classList.remove('active')
+          // Prevent adding same event listener
+          box.removeEventListener('click',resetbox)
+        }
+      })
+    })
+  }
+  
+  var trees=document.querySelectorAll('[data-tree]');
+  for(var i=trees.length;i-->0;){
+    // Add click listener each element that has data-accordion
+    trees[i].addEventListener('click',function(ev){
+      var target=this.parentNode,
+          siblings=target.parentNode.children;
+          
+      // Toggle class element active
+      target.classList.toggle('active')
+    })
+  }
+  var tabs=document.querySelectorAll('[data-tab]');
+  for(var i=tabs.length;i-->0;){
+    // Add click listener each element that has data-tab
+    tabs[i].addEventListener('click',function(ev){
+      var target=this.parentNode,
+          indicators=target.children,
+          index=Array.prototype.indexOf.call(indicators,this),
+          contents=target.parentNode.querySelector('section').children;
+      // Set all indicator and content as inactive
+      for(var i=0;i<contents.length;i++){
+        indicators[i].classList.remove('active')
+        contents[i].classList.remove('active')
+      }
+      // Set current target index as active
+      indicators[index].classList.add('active')
+      contents[index].classList.add('active')
+    })    
+  }
+  
+  
+  
+  var isMobile = false; //initiate as false
+  // device detection
+  if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+      || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
+      isMobile = true;
+      document.body.classList.toggle('mobile')
+  }
+  </script>
+</body>
+</html>
